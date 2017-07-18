@@ -81,13 +81,13 @@ EXMARaLDA warns that "Your player preference is set to JMF-Player" and "This is 
 
 If you wish you can generate a site with information of the project
 
-mvn -f pom.xml site
-mvn -f pom.xml dependency:resolve
-mvn -f pom.xml dependency:tree
-mvn -f pom.xml javadoc:javadoc
-mvn -f pom.xml jxr:jxr
-mvn -f pom.xml pmd:pmd
-mvn -f pom.xml pmd:cpd
+    mvn -f pom.xml site
+    mvn -f pom.xml dependency:resolve
+    mvn -f pom.xml dependency:tree
+    mvn -f pom.xml javadoc:javadoc
+    mvn -f pom.xml jxr:jxr
+    mvn -f pom.xml pmd:pmd
+    mvn -f pom.xml pmd:cpd
 
 The site is generated under `c:\workspace\maprepository\exmaralda\target\site` (`%EXMARALDA_WORKING_DIR%\target\site`)
 
