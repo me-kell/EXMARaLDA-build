@@ -1,5 +1,7 @@
 # EXMARaLDA maven build (for Windows)
 
+This is work on progress. It is an attempt to automate and to document the build process of EXMARaLDA.
+
 ## Requirements
 
 - Maven (tested with apache-maven-3.5.0)
