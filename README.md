@@ -1,6 +1,6 @@
 # EXMARaLDA maven build (for Windows)
 
-This is work on progress. It is an attempt to automate and to document the build process of EXMARaLDA.
+This is work on progress. It is an attempt to automate and to document the build process of [EXMARaLDA](https://github.com/EXMARaLDA/exmaralda).
 
 ## Requirements
 
