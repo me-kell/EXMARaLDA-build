@@ -82,11 +82,15 @@ To avoid conflicts with existing `groupIds` we could make these artifacts belong
 
 The origin/source of following artifacts has not yet been identified
 
-- `AppleJavaExtensions.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-AppleJavaExtensions.jar:1.6`)
-- `ipsk.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-ipsk.jar:1.6`)
-- `JavaQTMovieView-1.4.5.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-JavaQTMovieView-1.4.5.jar:1.6`)
-- `jctable.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-jctable.jar:1.6`)
-- `jmf.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-jmf.jar:1.6`)
+- `AppleJavaExtensions.jar` is of unknown origin.  (recommended name: `exmaralda:exmaralda-AppleJavaExtensions.jar:1.6`)
+- `ipsk.jar` is of unknown origin. 
+
+    _is this jar from BAS in München?_ (recommended name: `exmaralda:exmaralda-ipsk.jar:1.6`)
+- `JavaQTMovieView-1.4.5.jar` is of unknown origin.  (recommended name: `exmaralda:exmaralda-JavaQTMovieView-1.4.5.jar:1.6`)
+- `jctable.jar` is of unknown origin.  (recommended name: `exmaralda:exmaralda-jctable.jar:1.6`)
+- `jmf.jar` is of unknown origin. 
+
+    _Content of this jar do not correspond to any of the versions 2.1.1e, 2.2.1b, fs-3.0. The used jar by exmaralda is a subset of  "FobsJMF/jmf.jar". Furthermore there are three modified/changed classes: `com.sun.media.renderer.audio.AudioRenderer`, `com.sun.media.util.RegistryLib`, `com.sun.media.BasicRendererModule`. Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-jmf.jar:1.6`)
 
 ## Extra artifacts needed to compile EXMARaLDA
 
