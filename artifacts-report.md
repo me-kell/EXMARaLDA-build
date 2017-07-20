@@ -1,5 +1,14 @@
 # Artifacts (Open Issues)
 
+The dependecy artifacts used by EXMARaLDA are reported in four groups:
+(1) artifacts existing in public repositories,
+(2) artifacts equivalent to ones existing in public repositories,
+(3) artifacts included in other packages, and
+(4) artifacts of unknown origin.
+
+The purpose of this report is to complete the documentation of the artifacts used by EXMARaLDA.
+
+
 ## Artifacts existing in public repositories
 
 Following artifacts are the same as existing files in public repositories (e.g. Maven). They do follow the naming conventions.
@@ -57,7 +66,7 @@ To avoid conflicts with existing `groupIds` we could make these artifacts belong
 - `lobo.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo.jar`.  (recommended name: `exmaralda:exmaralda-lobo-0.98.2.jar:1.6`)
 - `lobo-pub.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo-pub.jar`.  (recommended name: `exmaralda:exmaralda-lobo-pub-0.98.2.jar:1.6`)
 
-## Arifacts of unknown origin
+## Artifacts of unknown origin
 
 The origin/source of following artifacts has not yet been identified
 
