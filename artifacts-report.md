@@ -1,10 +1,11 @@
 # Artifacts (Open Issues)
 
-The dependecy artifacts used by EXMARaLDA are reported in four groups:
+The dependecy artifacts used by EXMARaLDA are reported in following groups:
 (1) artifacts existing in public repositories,
 (2) artifacts equivalent to ones existing in public repositories,
-(3) artifacts included in other packages, and
-(4) artifacts of unknown origin.
+(3) artifacts included in other packages,
+(4) artifacts of unknown origin, and
+(5) extra artifacts needed to compile EXMARaLDA.
 
 The purpose of this report is to complete the documentation of the artifacts used by EXMARaLDA.
 
@@ -13,17 +14,15 @@ The purpose of this report is to complete the documentation of the artifacts use
 
 Following artifacts are the same as existing files in public repositories (e.g. Maven). They do follow the naming conventions.
 
-- `jcalendar-1.4.jar` is the same as [com.toedter:jcalendar:1.4](http://central.maven.org/maven2/com.toedter/jcalendar/1.4/jcalendar-1.4.jar).
+- `jcalendar-1.4.jar` is the same as [com.toedter:jcalendar:1.4](http://central.maven.org/maven2/com/toedter/jcalendar/1.4/jcalendar-1.4.jar).
 - `commons-io-2.4.jar` is the same as [commons-io:commons-io:2.4](http://central.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar).
 - `commons-lang-2.5.jar` is the same as [commons-lang:commons-lang:2.5](http://central.maven.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.jar).
 - `commons-logging-1.2.jar` is the same as [commons-logging:commons-logging:1.2](http://central.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar).
-- `oaipmh-cmdi-bindings-1.0.9.jar` is the same as [eu.clarin.weblicht:oaipmh-cmdi-bindings:1.0.9](http://central.maven.org/maven2/eu.clarin.weblicht/oaipmh-cmdi-bindings/1.0.9/oaipmh-cmdi-bindings-1.0.9.jar).
-- `wlfxb-1.3.2.jar` is the same as [eu.clarin.weblicht:wlfxb:1.3.2](http://central.maven.org/maven2/eu.clarin.weblicht/wlfxb/1.3.2/wlfxb-1.3.2.jar).
 - `jaxen-1.1.6.jar` is the same as [jaxen:jaxen:1.1.6](http://central.maven.org/maven2/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar).
-- `httpclient-4.5.1.jar` is the same as [org.apache.httpcomponents:httpclient:4.5.1](http://central.maven.org/maven2/org.apache.httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar).
-- `httpcore-4.4.3.jar` is the same as [org.apache.httpcomponents:httpcore:4.4.3](http://central.maven.org/maven2/org.apache.httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar).
-- `httpmime-4.5.1.jar` is the same as [org.apache.httpcomponents:httpmime:4.5.1](http://central.maven.org/maven2/org.apache.httpcomponents/httpmime/4.5.1/httpmime-4.5.1.jar).
-- `tritonus_share-0.3.6.jar` is the same as [org.mobicents.external.tritonus:tritonus_share:0.3.6](https://repository.jboss.org/org.mobicents.external.tritonus/tritonus_share/0.3.6/tritonus_share-0.3.6.jar).
+- `httpclient-4.5.1.jar` is the same as [org.apache.httpcomponents:httpclient:4.5.1](http://central.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar).
+- `httpcore-4.4.3.jar` is the same as [org.apache.httpcomponents:httpcore:4.4.3](http://central.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar).
+- `httpmime-4.5.1.jar` is the same as [org.apache.httpcomponents:httpmime:4.5.1](http://central.maven.org/maven2/org/apache/httpcomponents/httpmime/4.5.1/httpmime-4.5.1.jar).
+- `tritonus_share-0.3.6.jar` is the same as [org.mobicents.external.tritonus:tritonus_share:0.3.6](https://repository.jboss.org/org/mobicents/external/tritonus/tritonus_share/0.3.6/tritonus_share-0.3.6.jar).
 
 ## Artifacts equivalent to ones existing in public repositories
 
@@ -33,17 +32,17 @@ Following artifacts are the same as existing files in public repositories (e.g. 
 
     _The original  jar and the used one differ as follows: `com.apple.mrj.MRJFileUtils.java` has two new signatures: `public static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `public static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`. `com.apple.mrj.MRJPriv.java` has two new signatures: `static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`._
 - `mysql-connector-java-5.1.6-bin.jar` -> `mysql-connector-java-5.1.6.jar` is the same as [mysql:mysql-connector-java:5.1.6](http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar).
-- `stax-utils.jar` -> `stax-utils-20070216.jar` is the same as [net.java.dev.stax-utils:stax-utils:20070216](http://central.maven.org/maven2/net.java.dev.stax-utils/stax-utils/20070216/stax-utils-20070216.jar).
-- `saxon9he.jar` -> `Saxon-HE-9.6.0-7.jar` is the same as [net.sf.saxon:Saxon-HE:9.6.0-7](http://central.maven.org/maven2/net.sf.saxon/Saxon-HE/9.6.0-7/Saxon-HE-9.6.0-7.jar).
-- `jdom.jar` -> `jdom-1.1.3.jar` is the same as [org.jdom:jdom:1.1.3](http://central.maven.org/maven2/org.jdom/jdom/1.1.3/jdom-1.1.3.jar).
+- `stax-utils.jar` -> `stax-utils-20070216.jar` is the same as [net.java.dev.stax-utils:stax-utils:20070216](http://central.maven.org/maven2/net/java/dev/stax-utils/stax-utils/20070216/stax-utils-20070216.jar).
+- `saxon9he.jar` -> `Saxon-HE-9.6.0-7.jar` is the same as [net.sf.saxon:Saxon-HE:9.6.0-7](http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/9.6.0-7/Saxon-HE-9.6.0-7.jar).
+- `jdom.jar` -> `jdom-1.1.3.jar` is the same as [org.jdom:jdom:1.1.3](http://central.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar).
 - `serializer.jar` -> `serializer-2.7.2.jar` is the same as [xalan:serializer:2.7.2](http://central.maven.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.jar).
 - `xalan.jar` -> `xalan-2.7.2.jar` is the same as [xalan:xalan:2.7.2](http://central.maven.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.jar).
 - `xercesImpl.jar` -> `xercesImpl-2.11.0.jar` is the same as [xerces:xercesImpl:2.11.0](http://central.maven.org/maven2/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar).
 - `xml-apis.jar` -> `xml-apis-1.4.01.jar` is the same as [xml-apis:xml-apis:1.4.01](http://central.maven.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar).
-- `swing-worker-1.2.jar` -> `swingworker-1.2.jar` is the same as [org.jdesktop.swingworker:swingworker:1.2](http://projects.nigelsim.org/maven/org.jdesktop.swingworker/swingworker/1.2/swingworker-1.2.jar).
+- `swing-worker-1.2.jar` -> `swingworker-1.2.jar` is the same as [org.jdesktop.swingworker:swingworker:1.2](http://projects.nigelsim.org/maven/org/jdesktop/swingworker/swingworker/1.2/swingworker-1.2.jar).
 
     _Version 1.2 is not existing (anymore). There are versions 1.2-1 or 1.2-2 that can be found in repository nigelsim.com. But, can this repository be trusted? Will it be available in the future?_
-- `javax.mail.jar` -> `javax.mail-1.5.6.jar` is the same as [com.sun.mail:javax.mail:1.5.6](https://maven.java.net/content/repositories/releases/com.sun.mail/javax.mail/1.5.6/javax.mail-1.5.6.jar).
+- `javax.mail.jar` -> `javax.mail-1.5.6.jar` is the same as [com.sun.mail:javax.mail:1.5.6](https://maven.java.net/content/repositories/releases/com/sun/mail/javax.mail/1.5.6/javax.mail-1.5.6.jar).
 
 ## Artifacts included in other packages
 
@@ -75,3 +74,10 @@ The origin/source of following artifacts has not yet been identified
 - `JavaQTMovieView-1.4.5.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-JavaQTMovieView-1.4.5.jar:1.6`)
 - `jctable.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-jctable.jar:1.6`)
 - `jmf.jar` is of unknown origin. (recommended name: `exmaralda:exmaralda-jmf.jar:1.6`)
+
+## Extra artifacts needed to compile EXMARaLDA
+
+These artifacts are needed to compile EXMARaLDA. But they are not needed for runtime
+
+- `oaipmh-cmdi-bindings-1.0.9.jar` is the same as [eu.clarin.weblicht:oaipmh-cmdi-bindings:1.0.9](http://central.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar).
+- `wlfxb-1.3.2.jar` is the same as [eu.clarin.weblicht:wlfxb:1.3.2](http://central.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar).
