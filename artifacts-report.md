@@ -1,11 +1,10 @@
 # Artifacts (Open Issues)
 
-The dependecy artifacts used by EXMARaLDA are reported in following groups:
+The dependecy artifacts used by EXMARaLDA are reported in four groups:
 (1) artifacts existing in public repositories,
 (2) artifacts equivalent to ones existing in public repositories,
-(3) artifacts included in other packages,
-(4) artifacts of unknown origin, and
-(5) extra artifacts needed to compile EXMARaLDA.
+(3) artifacts included in other packages, and
+(4) artifacts of unknown origin.
 
 The purpose of this report is to complete the documentation of the artifacts used by EXMARaLDA.
 
@@ -30,7 +29,7 @@ Following artifacts are the same as existing files in public repositories (e.g. 
 
 - `mrj.jar` -> `MRJToolkitStubs-1.0.jar` is the same as [mrj:MRJToolkitStubs:1.0](http://central.maven.org/maven2/mrj/MRJToolkitStubs/1.0/MRJToolkitStubs-1.0.jar).
 
-    _The original  jar and the used one differ as follows: `com.apple.mrj.MRJFileUtils.java` has two new signatures: `public static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `public static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`. `com.apple.mrj.MRJPriv.java` has two new signatures: `static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`._
+    _The original  jar `MRJToolkitStubs-1.0.jar` and the used jar by exmaralda `mrj.jar` differ as follows: In `MRJToolkitStubs-1.0.jar` the class `com.apple.mrj.MRJFileUtils.java` has two new signatures: `public static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `public static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`, and the class `com.apple.mrj.MRJPriv.java` has two new signatures: `static File findFolder(short paramShort, MRJOSType paramMRJOSType)` and `static File findFolder(short paramShort, MRJOSType paramMRJOSType, boolean paramBoolean)`. Furthermore it has following files `META-INF\ABBOT.RSA`, `META-INF\ABBOT.SF`, `META-INF\MANIFEST.MF`. Otherwise the jars are binary the same._
 - `mysql-connector-java-5.1.6-bin.jar` -> `mysql-connector-java-5.1.6.jar` is the same as [mysql:mysql-connector-java:5.1.6](http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar).
 - `stax-utils.jar` -> `stax-utils-20070216.jar` is the same as [net.java.dev.stax-utils:stax-utils:20070216](http://central.maven.org/maven2/net/java/dev/stax-utils/stax-utils/20070216/stax-utils-20070216.jar).
 - `saxon9he.jar` -> `Saxon-HE-9.6.0-7.jar` is the same as [net.sf.saxon:Saxon-HE:9.6.0-7](http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/9.6.0-7/Saxon-HE-9.6.0-7.jar).
@@ -41,8 +40,10 @@ Following artifacts are the same as existing files in public repositories (e.g. 
 - `xml-apis.jar` -> `xml-apis-1.4.01.jar` is the same as [xml-apis:xml-apis:1.4.01](http://central.maven.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar).
 - `swing-worker-1.2.jar` -> `swingworker-1.2.jar` is the same as [org.jdesktop.swingworker:swingworker:1.2](http://projects.nigelsim.org/maven/org/jdesktop/swingworker/swingworker/1.2/swingworker-1.2.jar).
 
-    _Version 1.2 is not existing (anymore). There are versions 1.2-1 or 1.2-2 that can be found in repository nigelsim.com. But, can this repository be trusted? Will it be available in the future?_
+    _Version 1.2 is not existing (anymore). There are versions 1.2-1 or 1.2-2 that can be found in repository nigelsim.com. But, can this repository be trusted? Will it be available in the future? The jars are binary the same._
 - `javax.mail.jar` -> `javax.mail-1.5.6.jar` is the same as [com.sun.mail:javax.mail:1.5.6](https://maven.java.net/content/repositories/releases/com/sun/mail/javax.mail/1.5.6/javax.mail-1.5.6.jar).
+
+    _The original jar `javax.mail-1.5.6.jar` has a different `META-INF\MANIFEST.MF` as the jar used by exmaralda. Otherwise the jars are binary the same._
 
 ## Artifacts included in other packages
 
@@ -52,18 +53,30 @@ To avoid conflicts with existing `groupIds` we could make these artifacts belong
 - `BATIK.jar` is part of [batik-bin-1.8.zip](http://mirror.serversupportforum.de/apache/xmlgraphics/batik/binaries/batik-bin-1.8.zip) from which it can be extracted under the path ``. 
 
     _This jar seems to have mixed contents of batik-1.8 and some other classes. What is the purpose of this mixing?_ (recommended name: `exmaralda:exmaralda-:1.6`)
-- `elan.jar` is part of [ELAN_4-9-1_win.exe](http://www.mpi.nl/tools/elan/ELAN_4-9-1_win.exe) from which it can be extracted under the path `InstallerData/Disk1/InstData/Resource1.zip/C_/MPI/ELAN_Releases/Install_Intermediates/lib/elan4.9.1/elan-4.9.1.jar`.  (recommended name: `exmaralda:exmaralda-elan-4.9.1:1.6`)
-- `quaqua.jar` is part of [quaqua-9.1.nested.zip](http://www.randelshofer.ch/quaqua/files/quaqua-9.1.nested.zip) from which it can be extracted under the path `quaqua-9.1.zip/Quaqua/dist/quaqua.jar`.  (recommended name: `exmaralda:exmaralda-quaqua-9.1.jar:1.6`)
-- `fobs4jmf.jar` is part of [fobs4jmf_0.4.2_win32.tar.bz2](https://10gbps-io.dl.sourceforge.net/project/fobs/fobs4jmf%20binaries/Fobs4JMF-0.4.2/fobs4jmf_0.4.2_win32.tar.bz2) from which it can be extracted under the path `fobs4jmf_0.4.2_win32.tar/fobs4jmf_0.4.2_win32/fobs4jmf.jar`.  (recommended name: `exmaralda:exmaralda-fobs4jmf-0.4.2.jar:1.6`)
+- `elan.jar` is part of [ELAN_4-9-1_win.exe](http://www.mpi.nl/tools/elan/ELAN_4-9-1_win.exe) from which it can be extracted under the path `InstallerData/Disk1/InstData/Resource1.zip/C_/MPI/ELAN_Releases/Install_Intermediates/lib/elan4.9.1/elan-4.9.1.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-elan-4.9.1:1.6`)
+- `quaqua.jar` is part of [quaqua-9.1.nested.zip](http://www.randelshofer.ch/quaqua/files/quaqua-9.1.nested.zip) from which it can be extracted under the path `quaqua-9.1.zip/Quaqua/dist/quaqua.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-quaqua-9.1.jar:1.6`)
+- `fobs4jmf.jar` is part of [fobs4jmf_0.4.2_win32.tar.bz2](https://10gbps-io.dl.sourceforge.net/project/fobs/fobs4jmf%20binaries/Fobs4JMF-0.4.2/fobs4jmf_0.4.2_win32.tar.bz2) from which it can be extracted under the path `fobs4jmf_0.4.2_win32.tar/fobs4jmf_0.4.2_win32/fobs4jmf.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-fobs4jmf-0.4.2.jar:1.6`)
 - `jmf.jar` is part of [fobs4jmf_0.4.2_win32.tar.bz2](https://10gbps-io.dl.sourceforge.net/project/fobs/fobs4jmf%20binaries/Fobs4JMF-0.4.2/fobs4jmf_0.4.2_win32.tar.bz2) from which it can be extracted under the path `fobs4jmf_0.4.2_win32.tar/fobs4jmf_0.4.2_win32/jmf.jar`. 
 
-    _The jar used by exmaralda is a subset of the original jar_ (recommended name: `exmaralda:exmaralda-jmf-0.4.2.jar:1.6`)
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-jmf-0.4.2.jar:1.6`)
 - `bounce.jar` is part of [bounce-v011.zip](https://ayera.dl.sourceforge.net/project/bounce/bounce/0.11/bounce-v011.zip) from which it can be extracted under the path `bounce.jar`. 
 
-    _It seems an old version of nz.ac.waikato.cms.weka.thirdparty > bounce_ (recommended name: `exmaralda:exmaralda-:1.6`)
-- `cobra.jar` is part of [cobra-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Cobra%20HTML%20Toolkit/0.98.2/cobra-0.98.2.zip) from which it can be extracted under the path `cobra-0.98.2/lib/cobra.jar`.  (recommended name: `exmaralda:exmaralda-cobra-0.98.2.jar:1.6`)
-- `lobo.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo.jar`.  (recommended name: `exmaralda:exmaralda-lobo-0.98.2.jar:1.6`)
-- `lobo-pub.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo-pub.jar`.  (recommended name: `exmaralda:exmaralda-lobo-pub-0.98.2.jar:1.6`)
+    _It seems an old version of nz.ac.waikato.cms.weka.thirdparty > bounce. Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-:1.6`)
+- `cobra.jar` is part of [cobra-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Cobra%20HTML%20Toolkit/0.98.2/cobra-0.98.2.zip) from which it can be extracted under the path `cobra-0.98.2/lib/cobra.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-cobra-0.98.2.jar:1.6`)
+- `lobo.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-lobo-0.98.2.jar:1.6`)
+- `lobo-pub.jar` is part of [lobo-distro-0.98.2.zip](https://ayera.dl.sourceforge.net/project/xamj/Lobo%20Browser/0.98.2/lobo-distro-0.98.2.zip) from which it can be extracted under the path `lobo-distro-0.98.2/lobo-pub.jar`. 
+
+    _Otherwise the jars are binary the same._ (recommended name: `exmaralda:exmaralda-lobo-pub-0.98.2.jar:1.6`)
 
 ## Artifacts of unknown origin
 
