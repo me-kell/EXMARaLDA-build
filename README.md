@@ -5,7 +5,7 @@ This is work on progress. It is an attempt to automate and to document the build
 ## Requirements
 
 - Maven (tested with apache-maven-3.5.0)
-- Java Development Kit (tested with jdk1.8.0_131), jdk-8u144-windows-i586
+- Java Development Kit (tested with jdk-8u144-windows-i586)
 - Files of an EXMARaLDA installation
 
 ## Prepare
@@ -63,17 +63,19 @@ The following prepares a directory structure and adds dependencies to local mave
 
 Run maven with following goals.
 
-    mvn -f pom.xml clean dependency:copy-dependencies@copy-dependencies resources:resources compiler:compile jar:jar
+    mvn -f pom.xml clean dependency:copy-dependencies@copy-dependencies resources:copy-resources@copy-resources resources:resources compiler:compile jar:jar
+    mvn -f pom.xml resources:copy-resources@copy-resources
 
 Or simply `mvn -f pom.xml clean package`.
 
-After this you can run the PartiturEditor with following maven goal:
+After this you can run the PartiturEditor with following maven goal (you need a JRE, not just the JDK):
 
     mvn -f pom.xml exec:exec@partitureditor
 
 ## Change Player
 
-The `JDS Player` is not bound in this build. Therefore you should change it to `JMF Player`.
+The `JDS Player` is bound in this build.
+It sometimes makes problems. Therefore you should change it to `JMF Player`.
 Start EXMARaLDA. Under `Edit > Preferences ... > Media` set the `JMF Player`.
 Restart EXMARaLDA with `mvn -f pom.xml exec:exec@partitureditor`.
 
@@ -93,7 +95,3 @@ If you wish you can generate a site with information of the project
 
 The site is generated under `c:\workspace\maprepository\exmaralda\target\site` (`%EXMARALDA_WORKING_DIR%\target\site`)
 
-## To Do
-
-- use Java 32 bit with DSPlayer!
-- copy player dlls to target/lib directory

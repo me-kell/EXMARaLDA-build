@@ -1,5 +1,6 @@
 <project>
   <properties>
+    <java.jre.exe>c:/sde/tools/jdk-8u144-windows-i586/jre/bin/java.exe</java.jre.exe>
     <maven.build.timestamp.format>yyyy-MM-dd.HH-mm-ss</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
@@ -323,6 +324,7 @@
         <executions>
           <execution>
             <id>copy-resources</id>
+            <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
@@ -333,6 +335,9 @@
                   <directory>${installed.exmaralda.dir}/jre/bin</directory>
                   <includes>
                       <includes>DSPlayer.dll</includes>
+                      <includes>fobs4jmf.dll</includes>
+                      <includes>MMFPlayer.dll</includes>
+                      <includes>MMFPlayerVista.dll</includes>
                   </includes>
                 </resource>
               </resources>
@@ -397,7 +402,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>c:/sde/tools/jdk-8u144-windows-i586/bin/java.exe</executable>
+              <executable>${java.jre.exe}</executable>
               <arguments>
                 <argument>-classpath</argument>
                 <!--argument>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</argument-->
