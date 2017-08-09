@@ -4,7 +4,7 @@
   <property name="current.dir" location="."/>
   <property name="temp.dir" location="${current.dir}/tmp"/>
   <property name="working.dir" location="${current.dir}"/>
-  <property name="installed.exmaralda.dir" location="./exmaralda-installation"/>
+  <property name="installed.exmaralda.dir" location="c:\Program Files (x86)\EXMARaLDA"/>
   <target name="prepare" if="do.prepare" depends="ask_for_prepare">
     <antcall target="make_sure_we_have_a_clean_dir_structure" />
     <antcall target="download_exmaralda_sources" />

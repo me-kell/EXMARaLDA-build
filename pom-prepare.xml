@@ -1,7 +1,7 @@
 <project>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <installed.exmaralda.dir>./exmaralda-installation</installed.exmaralda.dir>
+    <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
     <tmp.dir>./tmp</tmp.dir>
   </properties>
   <modelVersion>4.0.0</modelVersion>

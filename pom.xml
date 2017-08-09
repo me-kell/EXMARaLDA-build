@@ -1,7 +1,8 @@
 <project>
   <properties>
+    <maven.build.timestamp.format>yyyy-MM-dd.HH-mm-ss</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <installed.exmaralda.dir>${basedir}/exmaralda-installation</installed.exmaralda.dir>
+    <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
     <tmp.dir>${basedir}/tmp</tmp.dir>
     <!-- properties for java classpath. To be used only in plugin exec:exec -->
     <cp_java_base>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/exmaralda.jctable-1.6.jar;</cp_java_base>
@@ -11,6 +12,8 @@
     <cp_java_client>${project.build.directory}/lib/exmaralda.httpcore-4.4.3-1.6.jar;${project.build.directory}/lib/exmaralda.httpclient-4.5.1-1.6.jar;${project.build.directory}/lib/exmaralda.httpmime-4.5.1-1.6.jar;</cp_java_client>
     <cp_java_other_stuff>${project.build.directory}/lib/exmaralda.commons-logging-1.2-1.6.jar;${project.build.directory}/lib/exmaralda.swing-worker-1.2-1.6.jar;${project.build.directory}/lib/exmaralda.BATIK-1.6.jar;</cp_java_other_stuff>
     <cp_java_unneeded>${project.build.directory}/lib/exmaralda.JavaQTMovieView-1.4.5-1.6.jar;</cp_java_unneeded>
+    <cp_java_all>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</cp_java_all>
+
   </properties>
   <scm>
     <developerConnection>scm:git:https://github.com/EXMARaLDA/exmaralda.git</developerConnection>
@@ -283,43 +286,21 @@
   </dependencies>
   <build>
     <plugins>
+      <!-- validate phase -->
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
         <executions>
-          <execution>
-            <id>test_classpath</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>c:/sde/tools/jdk1.8.0_131/bin/java.exe</executable>
-              <arguments>
-                <argument>-classpath</argument>
-                <argument>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</argument>
-                <argument>-Djava.library.path=${project.build.directory}/lib</argument>
-                <argument>com.obiecta.utils.UrlsOfContextClassLoaderOfCurrentThread</argument>
-              </arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>partitureditor</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>c:/sde/tools/jdk1.8.0_131/bin/java.exe</executable>
-              <arguments>
-                <argument>-classpath</argument>
-                <argument>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</argument>
-                <argument>-Djava.library.path=${project.build.directory}/lib</argument>
-                <argument>org.exmaralda.partitureditor.partiture.PartiturEditor</argument>
-              </arguments>
-            </configuration>
-          </execution>
+          <execution><id>validate</id><phase>validate</phase><goals><goal>run</goal></goals><configuration><target><echo message="validate ${maven.build.timestamp}" /></target></configuration></execution>
+          <execution><id>initialize</id><phase>initialize</phase><goals><goal>run</goal></goals><configuration><target><echo message="initialize" /></target></configuration></execution>
+          <execution><id>generate-sources</id><phase>generate-sources</phase><goals><goal>run</goal></goals><configuration><target><echo message="generate-sources" /></target></configuration></execution>
+          <execution><id>process-sources</id><phase>process-sources</phase><goals><goal>run</goal></goals><configuration><target><echo message="process-sources" /></target></configuration></execution>
         </executions>
       </plugin>
+      <!-- initialize phase -->
+      <!-- generate-sources phase -->
+      <!-- process-sources phase -->
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -334,6 +315,52 @@
           </execution>
         </executions>
       </plugin>
+      <!-- generate-resources phase -->
+      <!-- process-resources phase -->
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/dll</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${installed.exmaralda.dir}/jre/bin</directory>
+                  <includes>
+                      <includes>DSPlayer.dll</includes>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>      
+      <!-- compile phase -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-Xpkginfo:always</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+      <!-- process-classes phase -->
+      <!-- generate-test-sources phase -->
+      <!-- process-test-sources phase -->
+      <!-- generate-test-resources phase -->
+      <!-- process-test-resources phase -->
+      <!-- test-compile phase -->
+      <!-- process-test-classes phase -->
+      <!-- test phase -->
+      <!-- prepare-package phase -->
+      <!-- package phase -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -352,30 +379,36 @@
           </excludes>
         </configuration>
       </plugin>
+      <!-- pre-integration-test phase -->
+      <!-- integration-test phase -->
+      <!-- post-integration-test phase -->
+      <!-- verify phase -->
+      <!-- install phase -->
+      <!-- deploy phase -->
+      <!-- other plugins -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
-        <configuration>
-          <compilerArgs>
-            <arg>-Xpkginfo:always</arg>
-          </compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.soebes.maven.plugins</groupId>
-        <artifactId>doxygen-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <id>partitureditor</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>c:/sde/tools/jdk-8u144-windows-i586/bin/java.exe</executable>
+              <arguments>
+                <argument>-classpath</argument>
+                <!--argument>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</argument-->
+                <argument>${cp_java_all}</argument>
+                <argument>-Djava.library.path=${project.build.directory}/dll</argument>
+                <argument>org.exmaralda.partitureditor.partiture.PartiturEditor</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>com.soebes.maven.plugins</groupId>
-        <artifactId>doxygen-maven-plugin</artifactId>
-        <version>1.1.0</version>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>

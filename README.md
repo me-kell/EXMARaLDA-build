@@ -5,7 +5,7 @@ This is work on progress. It is an attempt to automate and to document the build
 ## Requirements
 
 - Maven (tested with apache-maven-3.5.0)
-- Java Development Kit (tested with jdk1.8.0_131)
+- Java Development Kit (tested with jdk1.8.0_131), jdk-8u144-windows-i586
 - Files of an EXMARaLDA installation
 
 ## Prepare
@@ -45,10 +45,10 @@ Download `https://github.com/me-kell/EXMARaLDA-Build/archive/master.zip` and ext
 
 ## Build with Maven
 
-We assume the JDK in `C:\sde\tools\jdk1.8.0_131` and maven in `C:\sde\tools\apache-maven-3.5.0`.
+We assume the JDK in `C:\sde\tools\jdk-8u144-windows-i586` and maven in `C:\sde\tools\apache-maven-3.5.0`.
 In a DOS-Box enter the following commands to set environment variables for Maven
 
-    set JAVA_HOME=C:\sde\tools\jdk1.8.0_131
+    set JAVA_HOME=C:\sde\tools\jdk-8u144-windows-i586
     set MAVEN_OPTS=-Xmx1524m
     set MAVEN_HOME=C:\sde\tools\apache-maven-3.5.0
     set PATH=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%PATH%
@@ -93,3 +93,7 @@ If you wish you can generate a site with information of the project
 
 The site is generated under `c:\workspace\maprepository\exmaralda\target\site` (`%EXMARALDA_WORKING_DIR%\target\site`)
 
+## To Do
+
+- use Java 32 bit with DSPlayer!
+- copy player dlls to target/lib directory
