@@ -64,7 +64,6 @@ The following prepares a directory structure and adds dependencies to local mave
 Run maven with following goals.
 
     mvn -f pom.xml clean dependency:copy-dependencies@copy-dependencies resources:copy-resources@copy-resources resources:resources compiler:compile jar:jar
-    mvn -f pom.xml resources:copy-resources@copy-resources
 
 Or simply `mvn -f pom.xml clean package`.
 
