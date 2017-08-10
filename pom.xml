@@ -5,6 +5,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
     <tmp.dir>${basedir}/tmp</tmp.dir>
+    <checkout.directory>${basedir}/checkoutDirectory</checkout.directory>
     <!-- properties for java classpath. To be used only in plugin exec:exec -->
     <cp_java_base>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/exmaralda.jctable-1.6.jar;</cp_java_base>
     <cp_java_xml>${project.build.directory}/lib/exmaralda.jdom-1.6.jar;${project.build.directory}/lib/exmaralda.xalan-1.6.jar;${project.build.directory}/lib/exmaralda.xercesImpl-1.6.jar;${project.build.directory}/lib/exmaralda.xml-apis-1.6.jar;${project.build.directory}/lib/exmaralda.saxon9he-1.6.jar;${project.build.directory}/lib/exmaralda.serializer-1.6.jar;${project.build.directory}/lib/exmaralda.jaxen-1.1.6-1.6.jar;</cp_java_xml>
@@ -14,11 +15,8 @@
     <cp_java_other_stuff>${project.build.directory}/lib/exmaralda.commons-logging-1.2-1.6.jar;${project.build.directory}/lib/exmaralda.swing-worker-1.2-1.6.jar;${project.build.directory}/lib/exmaralda.BATIK-1.6.jar;</cp_java_other_stuff>
     <cp_java_unneeded>${project.build.directory}/lib/exmaralda.JavaQTMovieView-1.4.5-1.6.jar;</cp_java_unneeded>
     <cp_java_all>${cp_java_base};${cp_java_xml};${cp_java_mac_os};${cp_java_audio_video};${cp_java_client};${cp_java_other_stuff};${cp_java_unneeded}</cp_java_all>
-
   </properties>
-  <scm>
-    <developerConnection>scm:git:https://github.com/EXMARaLDA/exmaralda.git</developerConnection>
-  </scm>
+  <!--scm> <connection>scm:git:https://github.com/me-kell/EXMARaLDA-build.git</connection> </scm-->
   <!-- More Project Information -->
   <name>EXMARaLDA</name>
   <description>EXMARaLDA is a system for working with oral corpora on a computer. It consists of a transcription and annotation tool (Partitur-Editor), a tool for managing corpora (Corpus-Manager) and a query and analysis tool (EXAKT). EXMARaLDA was developed in the project "Computer assisted methods for the creation and analysis of multilingual data" at the Collaborative Research Center "Multilingualism (Sonderforschungsbereich "Mehrsprachigkeit" – SFB 538) at the University of Hamburg. Since July 2011, the development of EXMARaLDA is continued at the Hamburg Centre for Language Corpora, since November 2011 in cooperation with the Archive for Spoken German at the Institute for the German Language in Mannheim.</description>
@@ -287,16 +285,658 @@
   </dependencies>
   <build>
     <plugins>
-      <!-- validate phase -->
+      <!-- not bound to any phase -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.5</version>
+        <executions>
+          <execution>
+            <id>checkout_exmaralda_build</id>
+            <!--phase>generate-sources</phase-->
+            <goals>
+              <goal>checkout</goal>
+            </goals>
+            <configuration>
+              <connectionType>connection</connectionType>
+              <connectionUrl>scm:git:https://github.com/me-kell/EXMARaLDA-build.git</connectionUrl>
+              <checkoutDirectory>${checkout.directory}</checkoutDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>checkout_exmaralda</id>
+            <!--phase>generate-sources</phase-->
+            <goals>
+              <goal>checkout</goal>
+            </goals>
+            <configuration>
+              <connectionType>connection</connectionType>
+              <connectionUrl>scm:git:https://github.com/EXMARaLDA/exmaralda.git</connectionUrl>
+              <checkoutDirectory>${checkout.directory}</checkoutDirectory>
+              <scmVersion>1.6</scmVersion>
+              <scmVersionType>tag</scmVersionType>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.8</version>
         <executions>
-          <execution><id>validate</id><phase>validate</phase><goals><goal>run</goal></goals><configuration><target><echo message="validate ${maven.build.timestamp}" /></target></configuration></execution>
-          <execution><id>initialize</id><phase>initialize</phase><goals><goal>run</goal></goals><configuration><target><echo message="initialize" /></target></configuration></execution>
-          <execution><id>generate-sources</id><phase>generate-sources</phase><goals><goal>run</goal></goals><configuration><target><echo message="generate-sources" /></target></configuration></execution>
-          <execution><id>process-sources</id><phase>process-sources</phase><goals><goal>run</goal></goals><configuration><target><echo message="process-sources" /></target></configuration></execution>
+          <execution>
+            <id>download_dependencies</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <delete dir="${project.basedir}/lib"/>
+                <mkdir dir="${project.basedir}/lib"/>
+                <!-- get compile dependencies for clarin -->
+                <get src="http://central.maven.org/maven2/eu/clarin/weblicht/wlfxb/1.3.2/wlfxb-1.3.2.jar" dest="${project.basedir}/lib/wlfxb-1.3.2.jar"/>
+                <get src="http://central.maven.org/maven2/eu/clarin/weblicht/oaipmh-cmdi-bindings/1.0.9/oaipmh-cmdi-bindings-1.0.9.jar" dest="${project.basedir}/lib/oaipmh-cmdi-bindings-1.0.9.jar"/>
+                <get src="http://central.maven.org/maven2/net/java/dev/stax-utils/stax-utils/20070216/stax-utils-20070216.jar" dest="${project.basedir}/lib/stax-utils-20070216.jar"/>
+                <!-- get "jsr173-ri-1.0.jar" for manually install, since it is not in maven central repository -->
+                <get src="http://www.mmbase.org/maven2/com/bea/xml/jsr173-ri/1.0/jsr173-ri-1.0.jar" dest="${project.basedir}/lib/jsr173-ri-1.0.jar"/>
+                <!-- copy a renamed version of QTJava.zip for install it as jar -->
+                <copy file="${installed.exmaralda.dir}/QTJava.zip" overwrite="true" force="true" tofile="${project.basedir}/lib/QTJava.jar"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>prepare_sources</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <!-- delete src and create src/main/java and src/main/resources -->
+                <delete dir="${project.basedir}/src"/>
+                <mkdir dir="${project.basedir}/src"/>
+                <mkdir dir="${project.basedir}/src/main/java"/>
+                <mkdir dir="${project.basedir}/src/main/resources"/>
+                <!-- copy java files to src/main/java -->
+                <copy todir="${project.basedir}/src/main/java" includeEmptyDirs="false">
+                  <fileset dir="${checkout.directory}/src">
+                    <include name="**/*.java"/>
+                  </fileset>
+                </copy>
+                <!-- copy non java (and non form) files to src/main/resources -->
+                <copy todir="${project.basedir}/src/main/resources" includeEmptyDirs="false">
+                  <fileset dir="${checkout.directory}/src">
+                    <exclude name="**/*.java"/>
+                    <exclude name="**/*.form"/>
+                  </fileset>
+                </copy>
+                <!-- delete unused packages -->
+                <delete dir="${project.basedir}/src/main/java/org/exmaralda/alignment" />
+                <delete dir="${project.basedir}/src/main/java/org/exmaralda/hzsk" />
+                <delete dir="${project.basedir}/src/main/java/org/exmaralda/sbcsae" />
+                <delete dir="${project.basedir}/src/main/java/org/exmaralda/exakt/applet" />
+                <delete dir="${project.basedir}/src/main/resources/org/exmaralda/exakt/applet" />
+                <!-- copy the following two files to working.dir. Only for internal test purposes -->
+                <copy file="${project.basedir}/SplashScreen.png" overwrite="true" force="true" tofile="${project.basedir}/src/main/resources/org/exmaralda/partitureditor/partiture/Icons/SplashScreen.png"/>
+                <copy file="${project.basedir}/UrlsOfContextClassLoaderOfCurrentThread.java" overwrite="true" force="true" tofile="${project.basedir}/src/main/java/com/obiecta/utils/UrlsOfContextClassLoaderOfCurrentThread.java"/>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- validate phase -->
+      <!-- install EXMARaLDA Jars to Maven local repository -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>install_file_AppleJavaExtensions</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/AppleJavaExtensions.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.AppleJavaExtensions</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_BATIK</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/BATIK.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.BATIK</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_bounce</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/bounce.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.bounce</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_cobra</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/cobra.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.cobra</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_commons-io-2.4</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/commons-io-2.4.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.commons-io-2.4</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_commons-lang-2.5</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/commons-lang-2.5.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.commons-lang-2.5</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_commons-logging-1.2</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/commons-logging-1.2.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.commons-logging-1.2</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_elan</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/elan.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.elan</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_FobsJMF.fobs4jmf</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/FobsJMF/fobs4jmf.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.FobsJMF.fobs4jmf</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_FobsJMF.jmf</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/FobsJMF/jmf.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.FobsJMF.jmf</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_httpclient-4.5.1</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/httpclient-4.5.1.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.httpclient-4.5.1</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_httpcore-4.4.3</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/httpcore-4.4.3.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.httpcore-4.4.3</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_httpmime-4.5.1</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/httpmime-4.5.1.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.httpmime-4.5.1</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_ipsk</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/ipsk.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.ipsk</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_JavaQTMovieView-1.4.5</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/JavaQTMovieView-1.4.5.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.JavaQTMovieView-1.4.5</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_javax.mail</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/javax.mail.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.javax.mail</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jaxen-1.1.6</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/jaxen-1.1.6.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.jaxen-1.1.6</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jcalendar-1.4</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/jcalendar-1.4.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.jcalendar-1.4</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jctable</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/jctable.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.jctable</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jdom</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/jdom.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.jdom</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jmf</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/jmf.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.jmf</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_lobo</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/lobo.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.lobo</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_lobo-pub</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/lobo-pub.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.lobo-pub</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_mrj</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/mrj.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.mrj</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_mysql-connector-java-5.1.6-bin</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/mysql-connector-java-5.1.6-bin.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.mysql-connector-java-5.1.6-bin</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_quaqua</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/quaqua.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.quaqua</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_saxon9he</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/saxon9he.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.saxon9he</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_serializer</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/serializer.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.serializer</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_stax-utils</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/stax-utils.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.stax-utils</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_swing-worker-1.2</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/swing-worker-1.2.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.swing-worker-1.2</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_tritonus_share-0.3.6</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/tritonus_share-0.3.6.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.tritonus_share-0.3.6</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_xalan</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/xalan.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.xalan</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_xercesImpl</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/xercesImpl.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.xercesImpl</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_xml-apis</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${installed.exmaralda.dir}/xml-apis.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.xml-apis</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_QTJava</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${project.basedir}/lib/QTJava.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.QTJava</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_exmaralda.oaipmh-cmdi-bindings-1.0.9</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${project.basedir}/lib/oaipmh-cmdi-bindings-1.0.9.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.oaipmh-cmdi-bindings-1.0.9</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_exmaralda.stax-utils-20070216</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${project.basedir}/lib/stax-utils-20070216.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.stax-utils-20070216</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_jsr173-ri-1.0</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <!-- license in pom is not available, must read from http://maven.ibiblio.org/maven2/com/bea/xml/jsr173-ri/1.0/jsr173-ri-1.0-license.txt -->
+              <file>${project.basedir}/lib/jsr173-ri-1.0.jar</file>
+              <groupId>com.bea.xml</groupId>
+              <artifactId>jsr173-ri</artifactId>
+              <version>1.0</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install_file_exmaralda.wlfxb-1.3.2</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${project.basedir}/lib/wlfxb-1.3.2.jar</file>
+              <groupId>exmaralda</groupId>
+              <artifactId>exmaralda.wlfxb-1.3.2</artifactId>
+              <version>1.6</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <!-- initialize phase -->
@@ -334,17 +974,17 @@
                 <resource>
                   <directory>${installed.exmaralda.dir}/jre/bin</directory>
                   <includes>
-                      <includes>DSPlayer.dll</includes>
-                      <includes>fobs4jmf.dll</includes>
-                      <includes>MMFPlayer.dll</includes>
-                      <includes>MMFPlayerVista.dll</includes>
+                    <includes>DSPlayer.dll</includes>
+                    <includes>fobs4jmf.dll</includes>
+                    <includes>MMFPlayer.dll</includes>
+                    <includes>MMFPlayerVista.dll</includes>
                   </includes>
                 </resource>
               </resources>
             </configuration>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
       <!-- compile phase -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

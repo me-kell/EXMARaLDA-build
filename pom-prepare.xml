@@ -48,7 +48,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>jsmooth</id>
+            <id>jsmoothgen_partitureditor</id>
             <goals>
               <goal>run</goal>
             </goals>
