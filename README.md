@@ -4,8 +4,9 @@ This is work on progress. It is an attempt to automate and to document the build
 
 ## Requirements
 
+- Java Development Kit and Jave Runtime Environment (tested with jdk-8u144-windows-i586)
 - Maven (tested with apache-maven-3.5.0)
-- Java Development Kit (tested with jdk-8u144-windows-i586)
+- JSmooth (tested with jsmooth-0.9.9-7)
 - Files of an EXMARaLDA installation
 
 ## Prepare
@@ -70,6 +71,13 @@ Or simply `mvn -f pom.xml clean package`.
 After this you can run the PartiturEditor with following maven goal (you need a JRE, not just the JDK):
 
     mvn -f pom.xml exec:exec@partitureditor
+
+## Make a windows executable
+
+To wrap the Partitureditor as windows executable with JSmooth
+
+    mvn -f pom-prepare.xml antrun:run@jsmoothgen_partitureditor
+
 
 ## Change Player
 
