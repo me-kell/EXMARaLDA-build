@@ -24,8 +24,8 @@ We assume the following:
 
 We also assume that
 
-- the original EXMARaLDA installation (or a simple copy of it) is in `c:\Program Files (x86)\EXMARaLDA` and access it with `%EXMARALDA_ORIGINAL_INSTALLATION_DIR%`.
-- the build will be in `c:\workspace\exmaralda` and access it with `%EXMARALDA_WORKING_DIR%`.
+- the original EXMARaLDA installation (or a simple copy of it) is in `c:\Program Files (x86)\EXMARaLDA` and we'll access it with `%EXMARALDA_ORIGINAL_INSTALLATION_DIR%`.
+- the build will be in `c:\workspace\exmaralda` and we'll access it with `%EXMARALDA_WORKING_DIR%`.
 
 In a DOS-Box enter the following commands to set the environment variables:
 
@@ -37,13 +37,12 @@ In a DOS-Box enter the following commands to set the environment variables:
 
     set EXMARALDA_WORKING_DIR=c:\workspace\exmaralda
 
-Clone this repository and change to the %EXMARALDA_WORKING_DIR%
+Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR%
 
     git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
     cd /d %EXMARALDA_WORKING_DIR%
 
 ## Before build with Maven
-
 
 Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project (note the use of `utils.xml`):
 
@@ -72,6 +71,8 @@ After this you can run the PartiturEditor with following maven goal (you need a 
     mvn -f pom.xml exec:exec@partitureditor
 
 ## Make a windows executable
+
+This part is experimental and not yet fully implemented. Some parts of EXMARaLDA won't work yet! For a working application use `mvn -f pom.xml exec:exec@partitureditor`.
 
 To wrap the Partitureditor as windows executable with JSmooth (note the use of `utils.xml`)
 
