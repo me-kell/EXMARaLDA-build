@@ -6,6 +6,9 @@
     <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
     <tmp.dir>${basedir}/tmp</tmp.dir>
     <checkout.directory>${basedir}/checkoutDirectory</checkout.directory>
+    <exmaraldaVersion>1.6</exmaraldaVersion>
+    <exmaraldaVersionType>tag</exmaraldaVersionType>
+
     <!-- properties for java classpath. To be used only in plugin exec:exec -->
     <cp_java_base>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/exmaralda.jctable-1.6.jar;</cp_java_base>
     <cp_java_xml>${project.build.directory}/lib/exmaralda.jdom-1.6.jar;${project.build.directory}/lib/exmaralda.xalan-1.6.jar;${project.build.directory}/lib/exmaralda.xercesImpl-1.6.jar;${project.build.directory}/lib/exmaralda.xml-apis-1.6.jar;${project.build.directory}/lib/exmaralda.saxon9he-1.6.jar;${project.build.directory}/lib/exmaralda.serializer-1.6.jar;${project.build.directory}/lib/exmaralda.jaxen-1.1.6-1.6.jar;</cp_java_xml>
@@ -68,8 +71,8 @@
               <connectionType>connection</connectionType>
               <connectionUrl>scm:git:https://github.com/EXMARaLDA/exmaralda.git</connectionUrl>
               <checkoutDirectory>${checkout.directory}</checkoutDirectory>
-              <scmVersion>1.6</scmVersion>
-              <scmVersionType>tag</scmVersionType>
+              <scmVersion>${exmaraldaVersion}</scmVersion>
+              <scmVersionType>${exmaraldaVersionType}</scmVersionType>
             </configuration>
           </execution>
         </executions>

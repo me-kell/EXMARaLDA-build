@@ -14,41 +14,20 @@ This is work on progress. It is an attempt to automate and to document the build
 
 Make sure you have a JDK (not just a JRE) and Maven installed.
 
-We assume the build will be in `c:\workspace\exmaralda` and access it with `%EXMARALDA_WORKING_DIR%`.
+We assume the following:
 
-In a DOS-Box enter the following commands. Please note this will delete the existing directory:
+- the JDK is in `C:\sde\tools\jdk-8u144-windows-i586`
+- the JRE is in `C:\sde\tools\jdk-8u144-windows-i586\jre`
+- Git is in `C:\sde\tools\Git-2.13.2-64-bit`
+- maven is in `C:\sde\tools\apache-maven-3.5.0`
+- JSmooth is in `C:\sde\tools\jsmooth-0.9.9-7`
 
-    set EXMARALDA_WORKING_DIR=c:\workspace\exmaralda
-    cd /d c:\
-    if exist %EXMARALDA_WORKING_DIR% rmdir /s /q %EXMARALDA_WORKING_DIR%
-    mkdir %EXMARALDA_WORKING_DIR%
-    mkdir %EXMARALDA_WORKING_DIR%\exmaralda-installation
-    cd /d %EXMARALDA_WORKING_DIR%
+We also assume that
 
-We assume your original EXMARaLDA installatin is in `c:\Program Files (x86)\EXMARaLDA` and access it with `%EXMARALDA_ORIGINAL_INSTALLATION_DIR%`.
-Copy all files of the EXMARaLDA installation to `c:\workspace\exmaralda` (`%EXMARALDA_WORKING_DIR%`)
+- the original EXMARaLDA installation (or a simple copy of it) is in `c:\Program Files (x86)\EXMARaLDA` and access it with `%EXMARALDA_ORIGINAL_INSTALLATION_DIR%`.
+- the build will be in `c:\workspace\exmaralda` and access it with `%EXMARALDA_WORKING_DIR%`.
 
-    set EXMARALDA_ORIGINAL_INSTALLATION_DIR=c:\Program Files (x86)\EXMARaLDA
-    echo "%EXMARALDA_ORIGINAL_INSTALLATION_DIR%" "%EXMARALDA_WORKING_DIR%"
-    cd /d "%EXMARALDA_ORIGINAL_INSTALLATION_DIR%"
-    xcopy "%EXMARALDA_ORIGINAL_INSTALLATION_DIR%" "%EXMARALDA_WORKING_DIR%\exmaralda-installation" /y /i
-    xcopy "%EXMARALDA_ORIGINAL_INSTALLATION_DIR%"\FobsJMF "%EXMARALDA_WORKING_DIR%\exmaralda-installation\FobsJMF" /y /i
-
-Download `https://github.com/me-kell/EXMARaLDA-Build/archive/master.zip` and extract its contents to `c:\workspace\exmaralda` (`%EXMARALDA_WORKING_DIR%`)
-
-- **README.md** (this file)
-- **pom.xml** (EXMARaLDA build POM)
-- **pom-prepare.xml** (utils POM to prepare the build. It calls prepare.xml)
-- **prepare.xml** (ant buildfile to prepare the build. Called by pom-prepare.xml)
-- **SplashScreen.png** (a modified SplashScreeen.png to test this buid)
-- **UrlsOfContextClassLoaderOfCurrentThread.java** (utils)
-- **exmaralda.exb** (simple test exmaralda file. Uses exmaralda.wav)
-- **exmaralda.wav** (simple test wav file)
-
-## Build with Maven
-
-We assume the JDK in `C:\sde\tools\jdk-8u144-windows-i586` and maven in `C:\sde\tools\apache-maven-3.5.0` and Git in `C:\sde\tools\Git-2.13.2-64-bit`.
-In a DOS-Box enter the following commands to set environment variables for Maven
+In a DOS-Box enter the following commands to set the environment variables:
 
     set JAVA_HOME=C:\sde\tools\jdk-8u144-windows-i586
     set MAVEN_OPTS=-Xmx1524m
@@ -58,17 +37,35 @@ In a DOS-Box enter the following commands to set environment variables for Maven
 
     set EXMARALDA_WORKING_DIR=c:\workspace\exmaralda
 
+Clone this repository and change to the %EXMARALDA_WORKING_DIR%
+
+    git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
     cd /d %EXMARALDA_WORKING_DIR%
 
-The following prepares a directory structure and adds dependencies to local maven repository (See `pom-prepare.xml` and `prepare.xml`). This will ask your permission to delete existing directories (`%EXMARALDA_WORKING_DIR%\tmp` and `%EXMARALDA_WORKING_DIR%\src`).
+## Before build with Maven
 
-    mvn -f pom-prepare.xml antrun:run@prepare validate
+
+Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project:
+
+    mvn -f pom-pre.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
+    mvn -f pom-pre.xml antrun:run@download_dependencies
+    mvn -f pom-pre.xml antrun:run@prepare_sources
+    mvn -f pom-pre.xml validate
+
+## Build with Maven
 
 Run maven with following goals.
 
-    mvn -f pom.xml clean dependency:copy-dependencies@copy-dependencies resources:copy-resources@copy-resources resources:resources compiler:compile jar:jar
+    mvn -f pom.xml clean
+    mvn -f pom.xml dependency:copy-dependencies@copy-dependencies
+    mvn -f pom.xml resources:copy-resources@copy-resources
+    mvn -f pom.xml resources:resources
+    mvn -f pom.xml compiler:compile
+    mvn -f pom.xml jar:jar
 
-Or simply `mvn -f pom.xml clean package`.
+Since the goals above are attached to the lifecycle's phases you could simply call:
+
+    mvn -f pom.xml clean package
 
 After this you can run the PartiturEditor with following maven goal (you need a JRE, not just the JDK):
 
@@ -80,6 +77,11 @@ To wrap the Partitureditor as windows executable with JSmooth
 
     mvn -f pom-prepare.xml antrun:run@jsmoothgen_partitureditor
 
+You'll find the executable in
+
+    %EXMARALDA_WORKING_DIR%\target\PartiturEditorWithFOBS.exe
+
+For test purposes there is an example file included: `%EXMARALDA_WORKING_DIR%\exmaralda.exb` with its corresponding audio file `%EXMARALDA_WORKING_DIR%\exmaralda.wav`
 
 ## Change Player
 
