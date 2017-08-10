@@ -5,6 +5,13 @@
   <property name="temp.dir" location="${current.dir}/tmp"/>
   <property name="working.dir" location="${current.dir}"/>
   <property name="installed.exmaralda.dir" location="c:\Program Files (x86)\EXMARaLDA"/>
+    <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+    <target name="jsmoothgen_partitureditor">
+        <copy todir="${working.dir}/target/jre">
+            <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+        </copy>
+        <jsmoothgen project="partitureditor_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+    </target>
   <target name="prepare" if="do.prepare" depends="ask_for_prepare">
     <antcall target="make_sure_we_have_a_clean_dir_structure" />
     <antcall target="download_exmaralda_sources" />

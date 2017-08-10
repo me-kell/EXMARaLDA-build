@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsmoothproject>
+    <arguments></arguments>
+    <bundledJVMPath>target\jre</bundledJVMPath>
+    <javaProperties>
+        <name>java.library.path</name>
+        <value>${EXECUTABLEPATH}/dll</value>
+    </javaProperties>
+    <classPath>./target/EXMARaLDA-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.jctable-1.6.jar</classPath>
+    <!-- XML -->
+    <classPath>./target/lib/exmaralda.jdom-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.xalan-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.xercesImpl-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.xml-apis-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.saxon9he-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.serializer-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.jaxen-1.1.6-1.6.jar</classPath>
+    <!-- MAC OS -->
+    <classPath>./target/lib/exmaralda.mrj-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.AppleJavaExtensions-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.QTJava-1.6.zip</classPath>
+    <!-- AUDIO / VIDEO -->
+    <classPath>./target/lib/exmaralda.FobsJMF.fobs4jmf-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.FobsJMF.jmf-1.6.jar</classPath>
+    <!-- BAS -->
+    <classPath>./target/lib/exmaralda.ipsk-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.elan-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.JavaQTMovieView-1.4.5-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.tritonus_share-0.3.6-1.6.jar</classPath>
+    <!-- HTTP CLIENT -->
+    <classPath>./target/lib/exmaralda.httpcore-4.4.3-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.httpclient-4.5.1-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.httpmime-4.5.1-1.6.jar</classPath>
+    <!-- OTHER STUFF -->
+    <classPath>./target/lib/exmaralda.commons-logging-1.2-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.swing-worker-1.2-1.6.jar</classPath>
+    <classPath>./target/lib/exmaralda.BATIK-1.6.jar</classPath>
+    <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
+    <embeddedJar>false</embeddedJar>
+    <executableName>target\PartiturEditorWithFOBS.exe</executableName>
+    <!--iconLocation>target\partitureditor.ico</iconLocation-->
+    <initialMemoryHeap>-1</initialMemoryHeap>
+    <mainClassName>org.exmaralda.partitureditor.partiture.PartiturEditor</mainClassName>
+    <maximumMemoryHeap>536870912</maximumMemoryHeap>
+    <maximumVersion></maximumVersion>
+    <minimumVersion>1.6</minimumVersion>
+    <skeletonName>Windowed Wrapper</skeletonName>
+    <skeletonProperties>
+        <key>Message</key>
+        <value>Java has not been found on your computer in a version 1.6 or higher. Do you want to download it? --- Auf Ihrem Rechner konnte Java in Version 1.6 oder höher nicht gefunden werden. Möchten Sie es downloaden?</value>
+    </skeletonProperties>
+    <skeletonProperties>
+        <key>URL</key>
+        <value>http://www.java.com/de/download/manual.jsp</value>
+    </skeletonProperties>
+    <skeletonProperties>
+        <key>SingleProcess</key>
+        <value>0</value>
+    </skeletonProperties>
+    <skeletonProperties>
+        <key>SingleInstance</key>
+        <value>0</value>
+    </skeletonProperties>
+    <skeletonProperties>
+        <key>JniSmooth</key>
+        <value>0</value>
+    </skeletonProperties>
+    <skeletonProperties>
+        <key>Debug</key>
+        <value>0</value>
+    </skeletonProperties>
+</jsmoothproject>

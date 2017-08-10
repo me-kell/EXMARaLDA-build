@@ -47,6 +47,18 @@
               </target>
             </configuration>
           </execution>
+          <execution>
+            <id>jsmooth</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <ant antfile="${project.basedir}/prepare.xml" target="jsmoothgen_partitureditor">
+                </ant>
+              </target>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <!-- install EXMARaLDA Jars to Maven local repository -->
