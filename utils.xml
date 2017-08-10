@@ -8,7 +8,6 @@
     <checkout.directory>${basedir}/checkoutDirectory</checkout.directory>
     <exmaraldaVersion>1.6</exmaraldaVersion>
     <exmaraldaVersionType>tag</exmaraldaVersionType>
-
     <!-- properties for java classpath. To be used only in plugin exec:exec -->
     <cp_java_base>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/exmaralda.jctable-1.6.jar;</cp_java_base>
     <cp_java_xml>${project.build.directory}/lib/exmaralda.jdom-1.6.jar;${project.build.directory}/lib/exmaralda.xalan-1.6.jar;${project.build.directory}/lib/exmaralda.xercesImpl-1.6.jar;${project.build.directory}/lib/exmaralda.xml-apis-1.6.jar;${project.build.directory}/lib/exmaralda.saxon9he-1.6.jar;${project.build.directory}/lib/exmaralda.serializer-1.6.jar;${project.build.directory}/lib/exmaralda.jaxen-1.1.6-1.6.jar;</cp_java_xml>
@@ -136,6 +135,21 @@
                 <!-- copy the following two files to working.dir. Only for internal test purposes -->
                 <copy file="${project.basedir}/SplashScreen.png" overwrite="true" force="true" tofile="${project.basedir}/src/main/resources/org/exmaralda/partitureditor/partiture/Icons/SplashScreen.png"/>
                 <copy file="${project.basedir}/UrlsOfContextClassLoaderOfCurrentThread.java" overwrite="true" force="true" tofile="${project.basedir}/src/main/java/com/obiecta/utils/UrlsOfContextClassLoaderOfCurrentThread.java"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>jsmoothgen_partitureditor</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="partitureditor_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
             </configuration>
           </execution>
@@ -696,7 +710,6 @@
           </execution>
         </executions>
       </plugin>
-
     </plugins>
   </build>
 </project>

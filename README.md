@@ -45,16 +45,16 @@ Clone this repository and change to the %EXMARALDA_WORKING_DIR%
 ## Before build with Maven
 
 
-Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project:
+Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project (note the use of `utils.xml`):
 
-    mvn -f pom-pre.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
-    mvn -f pom-pre.xml antrun:run@download_dependencies
-    mvn -f pom-pre.xml antrun:run@prepare_sources
-    mvn -f pom-pre.xml validate
+    mvn -f utils.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
+    mvn -f utils.xml antrun:run@download_dependencies
+    mvn -f utils.xml antrun:run@prepare_sources
+    mvn -f utils.xml validate
 
 ## Build with Maven
 
-Run maven with following goals.
+Run maven with following goals (note the use of `pom.xml`).
 
     mvn -f pom.xml clean
     mvn -f pom.xml dependency:copy-dependencies@copy-dependencies
@@ -73,9 +73,9 @@ After this you can run the PartiturEditor with following maven goal (you need a 
 
 ## Make a windows executable
 
-To wrap the Partitureditor as windows executable with JSmooth
+To wrap the Partitureditor as windows executable with JSmooth (note the use of `utils.xml`)
 
-    mvn -f pom-prepare.xml antrun:run@jsmoothgen_partitureditor
+    mvn -f utils.xml antrun:run@jsmoothgen_partitureditor
 
 You'll find the executable in
 
