@@ -1,15 +1,14 @@
 # Artifacts (Open Issues)
 
-The dependecy artifacts used by EXMARaLDA are reported in four groups:
+The dependecy artifacts used by EXMARaLDA are reported in following groups:
     (1) artifacts existing in public repositories,
     (2) artifacts equivalent to ones existing in public repositories,
-    (3) artifacts included in other packages, and
-    (4) artifacts of unknown origin.
-    (5) extra artifacts needed to compile EXMARaLDA
-    (6) Not more needed artifacts
-    (7) Special case
-
-    The purpose of this report is to complete the documentation of the artifacts used by EXMARaLDA.
+    (3) artifacts included in other packages,
+    (4) artifacts of unknown origin,
+    (5) extra artifacts needed to compile EXMARaLDA,
+    (6) Not more needed artifacts, and
+    (7) Special case.
+The purpose of this report is to complete the documentation of the artifacts used by EXMARaLDA.
     
 
 ## Artifacts existing in public repositories
