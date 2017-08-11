@@ -36,11 +36,11 @@ In a DOS-Box enter the following commands to set the environment variables:
     set PATH=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%GIT_HOME%\bin;%PATH%
 
     set EXMARALDA_WORKING_DIR=c:\workspace\exmaralda
-    cd /d %EXMARALDA_WORKING_DIR%
 
 Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR%
 
     git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
+    cd /d %EXMARALDA_WORKING_DIR%
 
 ## Before build with Maven
 
