@@ -165,6 +165,38 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.jboss.tattletale</groupId><artifactId>tattletale-maven</artifactId><version>1.1.0.Final</version>
+        <executions>
+          <execution>
+            <goals><goal>report</goal></goals>
+          </execution>
+        </executions>
+        <configuration>
+          <source>${project.basedir}/target</source>
+          <destination>${project.basedir}/target/tattletale</destination>
+          <reports>
+            <report>*</report>
+          </reports>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
+      </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId><artifactId>javancss-maven-plugin</artifactId><version>2.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
