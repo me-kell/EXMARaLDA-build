@@ -51,225 +51,225 @@
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.AppleJavaExtensions</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.BATIK</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.bounce</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.cobra</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.commons-io-2.4</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.commons-lang-2.5</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.commons-logging-1.2</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.elan</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.FobsJMF.fobs4jmf</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.FobsJMF.jmf</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.httpclient-4.5.1</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.httpcore-4.4.3</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.httpmime-4.5.1</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.ipsk</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.JavaQTMovieView-1.4.5</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.javax.mail</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.jaxen-1.1.6</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.jcalendar-1.4</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.jctable</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.jdom</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.jmf</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.lobo</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.lobo-pub</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.mrj</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.mysql-connector-java-5.1.6-bin</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.quaqua</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.saxon9he</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.serializer</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.stax-utils</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.swing-worker-1.2</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.tritonus_share-0.3.6</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.xalan</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.xercesImpl</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.xml-apis</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.QTJava</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.oaipmh-cmdi-bindings-1.0.9</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
       <type>jar</type>
     </dependency>
-    <!--dependency> <groupId>exmaralda</groupId> <artifactId>exmaralda.stax-utils-20070216</artifactId> <version>1.6</version> <scope>compile</scope><optional>true</optional> <type>jar</type> </dependency-->
+    <!--dependency> <groupId>exmaralda</groupId> <artifactId>exmaralda.stax-utils-20070216</artifactId> <version>1.6</version> <scope>compile</scope> <type>jar</type> </dependency-->
     <dependency>
       <groupId>exmaralda</groupId>
       <artifactId>exmaralda.wlfxb-1.3.2</artifactId>
       <version>1.6</version>
-      <scope>compile</scope><optional>true</optional>
+      <scope>compile</scope>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -402,6 +402,51 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.jboss.tattletale</groupId>
+        <artifactId>tattletale-maven</artifactId>
+        <!-- The version of the plugin you want to use -->
+        <version>1.1.0.Final</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- This is the location which will be scanned for generating tattletale reports -->
+          <source>${project.basedir}/target</source>
+          <!-- This is where the reports will be generated -->
+          <destination>${project.basedir}/target/tattletale</destination>
+          <reports>
+            <report>*</report>
+          </reports>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.ferstl</groupId>
+        <artifactId>depgraph-maven-plugin</artifactId>
+        <version>2.2.1</version>
+      </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.ferstl</groupId>
+          <artifactId>depgraph-maven-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>javancss-maven-plugin</artifactId>
+        <version>2.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
