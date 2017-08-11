@@ -36,16 +36,17 @@ In a DOS-Box enter the following commands to set the environment variables:
     set PATH=%JAVA_HOME%\bin;%MAVEN_HOME%\bin;%GIT_HOME%\bin;%PATH%
 
     set EXMARALDA_WORKING_DIR=c:\workspace\exmaralda
+    cd /d %EXMARALDA_WORKING_DIR%
 
 Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR%
 
     git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
-    cd /d %EXMARALDA_WORKING_DIR%
 
 ## Before build with Maven
 
 Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project (note the use of `utils.xml`):
 
+    cd /d %EXMARALDA_WORKING_DIR%
     mvn -f utils.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
     mvn -f utils.xml antrun:run@download_dependencies
     mvn -f utils.xml antrun:run@prepare_sources
@@ -55,6 +56,7 @@ Checkout EXMARaLDA (feel free to change the version), download dependencies, pre
 
 Run maven with following goals (note the use of `pom.xml`).
 
+    cd /d %EXMARALDA_WORKING_DIR%
     mvn -f pom.xml clean
     mvn -f pom.xml dependency:copy-dependencies@copy-dependencies
     mvn -f pom.xml resources:copy-resources@copy-resources

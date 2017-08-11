@@ -3,39 +3,48 @@
     <arguments></arguments>
     <bundledJVMPath>target\jre</bundledJVMPath>
     <javaProperties>
-        <name>java.library.path</name>
-        <value>${EXECUTABLEPATH}/dll</value>
+        <name>java.library.path</name><value>${EXECUTABLEPATH}/dll</value>
     </javaProperties>
+
     <classPath>./target/EXMARaLDA-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.jctable-1.6.jar</classPath>
-    <!-- XML -->
-    <classPath>./target/lib/exmaralda.jdom-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.xalan-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.xercesImpl-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.xml-apis-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.saxon9he-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.serializer-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.jaxen-1.1.6-1.6.jar</classPath>
-    <!-- MAC OS -->
-    <classPath>./target/lib/exmaralda.mrj-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.AppleJavaExtensions-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.QTJava-1.6.zip</classPath>
-    <!-- AUDIO / VIDEO -->
-    <classPath>./target/lib/exmaralda.FobsJMF.fobs4jmf-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.FobsJMF.jmf-1.6.jar</classPath>
-    <!-- BAS -->
-    <classPath>./target/lib/exmaralda.ipsk-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.elan-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.JavaQTMovieView-1.4.5-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.tritonus_share-0.3.6-1.6.jar</classPath>
-    <!-- HTTP CLIENT -->
-    <classPath>./target/lib/exmaralda.httpcore-4.4.3-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.httpclient-4.5.1-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.httpmime-4.5.1-1.6.jar</classPath>
-    <!-- OTHER STUFF -->
-    <classPath>./target/lib/exmaralda.commons-logging-1.2-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.swing-worker-1.2-1.6.jar</classPath>
-    <classPath>./target/lib/exmaralda.BATIK-1.6.jar</classPath>
+    <classPath>./target/lib/javax.mail-1.5.6.jar</classPath>
+    <classPath>./target/lib/jcalendar-1.4.jar</classPath>
+    <classPath>./target/lib/commons-io-2.4.jar</classPath>
+    <classPath>./target/lib/commons-lang-2.5.jar</classPath>
+    <classPath>./target/lib/commons-logging-1.2.jar</classPath>
+    <classPath>./target/lib/oaipmh-cmdi-bindings-1.0.9.jar</classPath>
+    <classPath>./target/lib/wlfxb-1.3.2.jar</classPath>
+    <classPath>./target/lib/jaxen-1.1.6.jar</classPath>
+    <classPath>./target/lib/MRJToolkitStubs-1.0.jar</classPath>
+    <classPath>./target/lib/mysql-connector-java-5.1.6.jar</classPath>
+    <classPath>./target/lib/stax-utils-20070216.jar</classPath>
+    <classPath>./target/lib/Saxon-HE-9.6.0-7.jar</classPath>
+    <classPath>./target/lib/httpclient-4.5.1.jar</classPath>
+    <classPath>./target/lib/httpcore-4.4.3.jar</classPath>
+    <classPath>./target/lib/httpmime-4.5.1.jar</classPath>
+    <classPath>./target/lib/swingworker-1.2.jar</classPath>
+    <classPath>./target/lib/jdom-1.1.3.jar</classPath>
+    <classPath>./target/lib/tritonus_share-0.3.6.jar</classPath>
+    <classPath>./target/lib/serializer-2.7.2.jar</classPath>
+    <classPath>./target/lib/xalan-2.7.2.jar</classPath>
+    <classPath>./target/lib/xercesImpl-2.11.0.jar</classPath>
+    <classPath>./target/lib/xml-apis-1.4.01.jar</classPath>
+    <classPath>./target/lib/batik-1.8.jar</classPath>
+    <classPath>./target/lib/elan-4.9.1.jar</classPath>
+    <classPath>./target/lib/quaqua-9.1.jar</classPath>
+    <classPath>./target/lib/fobsjmf-fobs4jmf-0.4.2.jar</classPath>
+    <classPath>./target/lib/fobsjmf-jmf-0.4.2.jar</classPath>
+    <classPath>./target/lib/bounce-0.11.jar</classPath>
+    <classPath>./target/lib/cobra-0.98.2.jar</classPath>
+    <classPath>./target/lib/lobo-0.98.2.jar</classPath>
+    <classPath>./target/lib/lobo-pub-0.98.2.jar</classPath>
+    <classPath>./target/lib/jmf-2003.04.jar</classPath>
+    <classPath>./target/lib/ipsk-2012.07.jar</classPath>
+    <classPath>./target/lib/AppleJavaExtensions-2004.07.jar</classPath>
+    <classPath>./target/lib/JavaQTMovieView-1.4.5.jar</classPath>
+    <classPath>./target/lib/jctable-2003.06.jar</classPath>
+    <classPath>./target/lib/QTJava-2006.06.jar</classPath>
+
     <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
     <embeddedJar>false</embeddedJar>
     <executableName>target\PartiturEditorWithFOBS.exe</executableName>
@@ -45,29 +54,13 @@
     <maximumMemoryHeap>536870912</maximumMemoryHeap>
     <maximumVersion></maximumVersion>
     <minimumVersion>1.6</minimumVersion>
+
     <skeletonName>Windowed Wrapper</skeletonName>
-    <skeletonProperties>
-        <key>Message</key>
-        <value>Java has not been found on your computer in a version 1.6 or higher. Do you want to download it? --- Auf Ihrem Rechner konnte Java in Version 1.6 oder höher nicht gefunden werden. Möchten Sie es downloaden?</value>
-    </skeletonProperties>
-    <skeletonProperties>
-        <key>URL</key>
-        <value>http://www.java.com/de/download/manual.jsp</value>
-    </skeletonProperties>
-    <skeletonProperties>
-        <key>SingleProcess</key>
-        <value>0</value>
-    </skeletonProperties>
-    <skeletonProperties>
-        <key>SingleInstance</key>
-        <value>0</value>
-    </skeletonProperties>
-    <skeletonProperties>
-        <key>JniSmooth</key>
-        <value>0</value>
-    </skeletonProperties>
-    <skeletonProperties>
-        <key>Debug</key>
-        <value>0</value>
-    </skeletonProperties>
+
+    <skeletonProperties><key>Message</key><value>Java has not been found on your computer in a version 1.6 or higher. Do you want to download it? --- Auf Ihrem Rechner konnte Java in Version 1.6 oder höher nicht gefunden werden. Möchten Sie es downloaden?</value></skeletonProperties>
+    <skeletonProperties><key>URL</key><value>http://www.java.com/de/download/manual.jsp</value></skeletonProperties>
+    <skeletonProperties><key>SingleProcess</key><value>0</value></skeletonProperties>
+    <skeletonProperties><key>SingleInstance</key><value>0</value></skeletonProperties>
+    <skeletonProperties><key>JniSmooth</key><value>0</value></skeletonProperties>
+    <skeletonProperties><key>Debug</key><value>0</value></skeletonProperties>
 </jsmoothproject>
