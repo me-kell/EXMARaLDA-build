@@ -4,14 +4,16 @@
     <maven.build.timestamp.format>yyyy-MM-dd.HH-mm-ss</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <installed.exmaralda.dir>c:\Program Files (x86)\EXMARaLDA</installed.exmaralda.dir>
-    <cp_java_all>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/javax.mail-1.5.6.jar;${project.build.directory}/lib/jcalendar-1.4.jar;${project.build.directory}/lib/commons-io-2.4.jar;${project.build.directory}/lib/commons-lang-2.5.jar;${project.build.directory}/lib/commons-logging-1.2.jar;${project.build.directory}/lib/oaipmh-cmdi-bindings-1.0.9.jar;${project.build.directory}/lib/wlfxb-1.3.2.jar;${project.build.directory}/lib/jaxen-1.1.6.jar;${project.build.directory}/lib/MRJToolkitStubs-1.0.jar;${project.build.directory}/lib/mysql-connector-java-5.1.6.jar;${project.build.directory}/lib/stax-utils-20070216.jar;${project.build.directory}/lib/Saxon-HE-9.6.0-7.jar;${project.build.directory}/lib/httpclient-4.5.1.jar;${project.build.directory}/lib/httpcore-4.4.3.jar;${project.build.directory}/lib/httpmime-4.5.1.jar;${project.build.directory}/lib/swingworker-1.2.jar;${project.build.directory}/lib/jdom-1.1.3.jar;${project.build.directory}/lib/tritonus_share-0.3.6.jar;${project.build.directory}/lib/serializer-2.7.2.jar;${project.build.directory}/lib/xalan-2.7.2.jar;${project.build.directory}/lib/xercesImpl-2.11.0.jar;${project.build.directory}/lib/xml-apis-1.4.01.jar;${project.build.directory}/lib/batik-1.8.jar;${project.build.directory}/lib/elan-4.9.1.jar;${project.build.directory}/lib/quaqua-9.1.jar;${project.build.directory}/lib/fobsjmf-fobs4jmf-0.4.2.jar;${project.build.directory}/lib/fobsjmf-jmf-0.4.2.jar;${project.build.directory}/lib/bounce-0.11.jar;${project.build.directory}/lib/cobra-0.98.2.jar;${project.build.directory}/lib/lobo-0.98.2.jar;${project.build.directory}/lib/lobo-pub-0.98.2.jar;${project.build.directory}/lib/jmf-2003.04.jar;${project.build.directory}/lib/ipsk-2012.07.jar;${project.build.directory}/lib/AppleJavaExtensions-2004.07.jar;${project.build.directory}/lib/JavaQTMovieView-1.4.5.jar;${project.build.directory}/lib/jctable-2003.06.jar;${project.build.directory}/lib/QTJava-2006.06.jar;</cp_java_all>
+  <cp_java_all>${project.build.directory}/EXMARaLDA-1.6.jar;${project.build.directory}/lib/ant-1.10.1.jar;${project.build.directory}/lib/ant-launcher-1.10.1.jar;${project.build.directory}/lib/AppleJavaExtensions-2004.07.jar;${project.build.directory}/lib/batik-1.8.jar;${project.build.directory}/lib/bounce-0.11.jar;${project.build.directory}/lib/cobra-0.98.2.jar;${project.build.directory}/lib/commons-io-2.4.jar;${project.build.directory}/lib/commons-lang-2.5.jar;${project.build.directory}/lib/commons-logging-1.2.jar;${project.build.directory}/lib/elan-4.9.1.jar;${project.build.directory}/lib/fobsjmf-fobs4jmf-0.4.2.jar;${project.build.directory}/lib/httpclient-4.5.1.jar;${project.build.directory}/lib/httpcore-4.4.3.jar;${project.build.directory}/lib/httpmime-4.5.1.jar;${project.build.directory}/lib/ipsk-2012.07.jar;${project.build.directory}/lib/JavaQTMovieView-1.4.5.jar;${project.build.directory}/lib/javax.mail-1.5.6.jar;${project.build.directory}/lib/jaxen-1.1.6.jar;${project.build.directory}/lib/jcalendar-1.4.jar;${project.build.directory}/lib/jctable-2003.06.jar;${project.build.directory}/lib/jdom-1.1.3.jar;${project.build.directory}/lib/fobsjmf-jmf-0.4.2.jar;${project.build.directory}/lib/jmf-2003.04.jar;${project.build.directory}/lib/jsr173-ri-1.0.jar;${project.build.directory}/lib/lobo-0.98.2.jar;${project.build.directory}/lib/lobo-pub-0.98.2.jar;${project.build.directory}/lib/MRJToolkitStubs-1.0.jar;${project.build.directory}/lib/mysql-connector-java-5.1.6.jar;${project.build.directory}/lib/oaipmh-cmdi-bindings-1.0.9.jar;${project.build.directory}/lib/quaqua-9.1.jar;${project.build.directory}/lib/Saxon-HE-9.6.0-7.jar;${project.build.directory}/lib/serializer-2.7.2.jar;${project.build.directory}/lib/stax-utils-20070216.jar;${project.build.directory}/lib/swingworker-1.2.jar;${project.build.directory}/lib/tritonus_share-0.3.6.jar;${project.build.directory}/lib/wlfxb-1.3.2.jar;${project.build.directory}/lib/xalan-2.7.2.jar;${project.build.directory}/lib/xercesImpl-2.11.0.jar;${project.build.directory}/lib/xml-apis-1.4.01.jar;${project.build.directory}/lib/QTJava-2006.06.jar;</cp_java_all>
   </properties>
-  <name>EXMARaLDA</name>
-  <description>EXMARaLDA is a system for working with oral corpora on a computer. It consists of a transcription and annotation tool (Partitur-Editor), a tool for managing corpora (Corpus-Manager) and a query and analysis tool (EXAKT). EXMARaLDA was developed in the project "Computer assisted methods for the creation and analysis of multilingual data" at the Collaborative Research Center "Multilingualism (Sonderforschungsbereich "Mehrsprachigkeit" – SFB 538) at the University of Hamburg. Since July 2011, the development of EXMARaLDA is continued at the Hamburg Centre for Language Corpora, since November 2011 in cooperation with the Archive for Spoken German at the Institute for the German Language in Mannheim.</description>
-  <url>http://exmaralda.org</url>
-  <organization><name>Hamburg Centre for Language Corpora</name><url>http://hzsk.uni-hamburg.de</url></organization>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>de.uni-hamburg.hzsk</groupId><artifactId>EXMARaLDA</artifactId><version>1.6</version>
+    <name>EXMARaLDA</name>
+    <description>EXMARaLDA is a system for working with oral corpora on a computer. It consists of a transcription and annotation tool (Partitur-Editor), a tool for managing corpora (Corpus-Manager) and a query and analysis tool (EXAKT). EXMARaLDA was developed in the project "Computer assisted methods for the creation and analysis of multilingual data" at the Collaborative Research Center "Multilingualism (Sonderforschungsbereich "Mehrsprachigkeit" – SFB 538) at the University of Hamburg. Since July 2011, the development of EXMARaLDA is continued at the Hamburg Centre for Language Corpora, since November 2011 in cooperation with the Archive for Spoken German at the Institute for the German Language in Mannheim.</description>
+    <url>http://exmaralda.org</url>
+    <organization><name>Hamburg Centre for Language Corpora</name><url>http://hzsk.uni-hamburg.de</url></organization>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.uni-hamburg.hzsk</groupId>
+    <artifactId>EXMARaLDA</artifactId>
+    <version>1.6</version>
   <repositories>
     <repository><id>http___projects.nigelsim.org_maven</id><name>http___projects.nigelsim.org_maven</name><url>http://projects.nigelsim.org/maven</url></repository>
     <repository><id>https___maven.java.net_content_repositories_releases</id><name>https___maven.java.net_content_repositories_releases</name><url>https://maven.java.net/content/repositories/releases</url></repository>
@@ -20,59 +22,56 @@
   </repositories>
   <dependencies>
     <!-- dependencies in maven repositories -->
-    <dependency><groupId>com.sun.mail</groupId><artifactId>javax.mail</artifactId><version>1.5.6</version><scope>compile</scope></dependency>
-    <dependency><groupId>com.toedter</groupId><artifactId>jcalendar</artifactId><version>1.4</version><scope>compile</scope></dependency>
-    <dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>2.4</version><scope>compile</scope></dependency>
-    <dependency><groupId>commons-lang</groupId><artifactId>commons-lang</artifactId><version>2.5</version><scope>compile</scope></dependency>
-    <dependency><groupId>commons-logging</groupId><artifactId>commons-logging</artifactId><version>1.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>eu.clarin.weblicht</groupId><artifactId>oaipmh-cmdi-bindings</artifactId><version>1.0.9</version><scope>compile</scope></dependency>
-    <dependency><groupId>eu.clarin.weblicht</groupId><artifactId>wlfxb</artifactId><version>1.3.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>jaxen</groupId><artifactId>jaxen</artifactId><version>1.1.6</version><scope>compile</scope></dependency>
-    <dependency><groupId>mrj</groupId><artifactId>MRJToolkitStubs</artifactId><version>1.0</version><scope>compile</scope></dependency>
-    <dependency><groupId>mysql</groupId><artifactId>mysql-connector-java</artifactId><version>5.1.6</version><scope>compile</scope></dependency>
-    <dependency><groupId>net.java.dev.stax-utils</groupId><artifactId>stax-utils</artifactId><version>20070216</version><scope>compile</scope></dependency>
-    <dependency><groupId>net.sf.saxon</groupId><artifactId>Saxon-HE</artifactId><version>9.6.0-7</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpclient</artifactId><version>4.5.1</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpcore</artifactId><version>4.4.3</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpmime</artifactId><version>4.5.1</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.jdesktop.swingworker</groupId><artifactId>swingworker</artifactId><version>1.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.jdom</groupId><artifactId>jdom</artifactId><version>1.1.3</version><scope>compile</scope></dependency>
-    <dependency><groupId>org.mobicents.external.tritonus</groupId><artifactId>tritonus_share</artifactId><version>0.3.6</version><scope>compile</scope></dependency>
-    <dependency><groupId>xalan</groupId><artifactId>serializer</artifactId><version>2.7.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>xalan</groupId><artifactId>xalan</artifactId><version>2.7.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>xerces</groupId><artifactId>xercesImpl</artifactId><version>2.11.0</version><scope>compile</scope></dependency>
-    <dependency><groupId>xml-apis</groupId><artifactId>xml-apis</artifactId><version>1.4.01</version><scope>compile</scope></dependency>
+    <dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>2.4</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>commons-lang</groupId><artifactId>commons-lang</artifactId><version>2.5</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>commons-logging</groupId><artifactId>commons-logging</artifactId><version>1.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpclient</artifactId><version>4.5.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpcore</artifactId><version>4.4.3</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpmime</artifactId><version>4.5.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>com.sun.mail</groupId><artifactId>javax.mail</artifactId><version>1.5.6</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>jaxen</groupId><artifactId>jaxen</artifactId><version>1.1.6</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>com.toedter</groupId><artifactId>jcalendar</artifactId><version>1.4</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.jdom</groupId><artifactId>jdom</artifactId><version>1.1.3</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>mrj</groupId><artifactId>MRJToolkitStubs</artifactId><version>1.0</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>mysql</groupId><artifactId>mysql-connector-java</artifactId><version>5.1.6</version><scope>compile</scope><type>jar</type></dependency>
+    <!--<dependency><groupId>eu.clarin.weblicht</groupId><artifactId>oaipmh-cmdi-bindings</artifactId><version>1.0.9</version><scope>compile</scope><type>jar</type></dependency>-->
+    <dependency><groupId>net.sf.saxon</groupId><artifactId>Saxon-HE</artifactId><version>9.6.0-7</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>xalan</groupId><artifactId>serializer</artifactId><version>2.7.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>net.java.dev.stax-utils</groupId><artifactId>stax-utils</artifactId><version>20070216</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.jdesktop.swingworker</groupId><artifactId>swingworker</artifactId><version>1.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.mobicents.external.tritonus</groupId><artifactId>tritonus_share</artifactId><version>0.3.6</version><scope>compile</scope><type>jar</type></dependency>
+    <!--<dependency><groupId>eu.clarin.weblicht</groupId><artifactId>wlfxb</artifactId><version>1.3.2</version><scope>compile</scope><type>jar</type></dependency>-->
+    <dependency><groupId>xalan</groupId><artifactId>xalan</artifactId><version>2.7.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>xerces</groupId><artifactId>xercesImpl</artifactId><version>2.11.0</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>xml-apis</groupId><artifactId>xml-apis</artifactId><version>1.4.01</version><scope>compile</scope><type>jar</type></dependency>
     <!-- dependencies not in maven repositories -->
-    <dependency><groupId>exmaralda</groupId><artifactId>batik</artifactId><version>1.8</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>elan</artifactId><version>4.9.1</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>quaqua</artifactId><version>9.1</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>fobsjmf-fobs4jmf</artifactId><version>0.4.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>fobsjmf-jmf</artifactId><version>0.4.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>bounce</artifactId><version>0.11</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>cobra</artifactId><version>0.98.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>lobo</artifactId><version>0.98.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>lobo-pub</artifactId><version>0.98.2</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>jmf</artifactId><version>2003.04</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>ipsk</artifactId><version>2012.07</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>AppleJavaExtensions</artifactId><version>2004.07</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>JavaQTMovieView</artifactId><version>1.4.5</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>jctable</artifactId><version>2003.06</version><scope>compile</scope></dependency>
-    <dependency><groupId>exmaralda</groupId><artifactId>QTJava</artifactId><version>2006.06</version><scope>compile</scope></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>AppleJavaExtensions</artifactId><version>2004.07</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>batik</artifactId><version>1.8</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>bounce</artifactId><version>0.11</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>cobra</artifactId><version>0.98.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>elan</artifactId><version>4.9.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>fobsjmf-fobs4jmf</artifactId><version>0.4.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>ipsk</artifactId><version>2012.07</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>JavaQTMovieView</artifactId><version>1.4.5</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>jctable</artifactId><version>2003.06</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>fobsjmf-jmf</artifactId><version>0.4.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>jmf</artifactId><version>2003.04</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>lobo</artifactId><version>0.98.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>lobo-pub</artifactId><version>0.98.2</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>quaqua</artifactId><version>9.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>exmaralda</groupId><artifactId>QTJava</artifactId><version>2006.06</version><scope>compile</scope><type>jar</type></dependency>
     <!-- dependencies for maven plugins -->
-    <dependency><groupId>org.apache.ant</groupId><artifactId>ant</artifactId><version>1.10.1</version></dependency>
-    <dependency><groupId>org.apache.ant</groupId><artifactId>ant-launcher</artifactId><version>1.10.1</version></dependency>
-    <!-- backup dependencies -->
-    <!--dependency><groupId>exmaralda</groupId><artifactId>stax-utils</artifactId><version>20070216</version><scope>compile</scope></dependency-->
-    <!--dependency><groupId>exmaralda</groupId><artifactId>oaipmh-cmdi-bindings</artifactId><version>1.0.9</version><scope>compile</scope><type>jar</type></dependency-->
-    <!--dependency><groupId>exmaralda</groupId><artifactId>wlfxb</artifactId><version>1.3.2</version><scope>compile</scope><type>jar</type></dependency-->
+    <dependency><groupId>org.apache.ant</groupId><artifactId>ant</artifactId><version>1.10.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.apache.ant</groupId><artifactId>ant-launcher</artifactId><version>1.10.1</version><scope>compile</scope><type>jar</type></dependency>
   </dependencies>
   <build>
-    <plugins>
-      <!-- not bound to any phase -->
-      <!-- validate phase -->
-      <!-- initialize phase -->
-      <!-- generate-sources phase -->
-      <!-- process-sources phase -->
+  <plugins>
+    <!-- not bound to any phase -->
+    <!-- validate phase -->
+    <!-- initialize phase -->
+    <!-- generate-sources phase -->
+    <!-- process-sources phase -->
+
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -83,8 +82,9 @@
           </execution>
         </executions>
       </plugin>
-      <!-- generate-resources phase -->
-      <!-- process-resources phase -->
+    <!-- generate-resources phase -->
+    <!-- process-resources phase -->
+
       <plugin>
         <artifactId>maven-resources-plugin</artifactId><version>3.0.2</version>
         <executions>
@@ -98,34 +98,37 @@
                 <resource>
                   <directory>${installed.exmaralda.dir}/jre/bin</directory>
                   <includes>
+                    <includes>MMFPlayerVista.dll</includes>
+                    <includes>MMFPlayer.dll</includes>
                     <includes>DSPlayer.dll</includes>
                     <includes>fobs4jmf.dll</includes>
-                    <includes>MMFPlayer.dll</includes>
-                    <includes>MMFPlayerVista.dll</includes>
                   </includes>
+
                 </resource>
               </resources>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      <!-- compile phase -->
+    <!-- compile phase -->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.6.1</version>
         <configuration>
           <compilerArgs><arg>-Xpkginfo:always</arg></compilerArgs>
         </configuration>
       </plugin>
-      <!-- process-classes phase -->
-      <!-- generate-test-sources phase -->
-      <!-- process-test-sources phase -->
-      <!-- generate-test-resources phase -->
-      <!-- process-test-resources phase -->
-      <!-- test-compile phase -->
-      <!-- process-test-classes phase -->
-      <!-- test phase -->
-      <!-- prepare-package phase -->
-      <!-- package phase -->
+    <!-- process-classes phase -->
+    <!-- generate-test-sources phase -->
+    <!-- process-test-sources phase -->
+    <!-- generate-test-resources phase -->
+    <!-- process-test-resources phase -->
+    <!-- test-compile phase -->
+    <!-- process-test-classes phase -->
+    <!-- test phase -->
+    <!-- prepare-package phase -->
+    <!-- package phase -->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.0.2</version>
         <configuration>
@@ -140,13 +143,14 @@
           </excludes>
         </configuration>
       </plugin>
-      <!-- pre-integration-test phase -->
-      <!-- integration-test phase -->
-      <!-- post-integration-test phase -->
-      <!-- verify phase -->
-      <!-- install phase -->
-      <!-- deploy phase -->
-      <!-- other plugins -->
+    <!-- pre-integration-test phase -->
+    <!-- integration-test phase -->
+    <!-- post-integration-test phase -->
+    <!-- verify phase -->
+    <!-- install phase -->
+    <!-- deploy phase -->
+    <!-- other plugins -->
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>1.6.0</version>
         <executions>
@@ -165,6 +169,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.jboss.tattletale</groupId><artifactId>tattletale-maven</artifactId><version>1.1.0.Final</version>
         <executions>
@@ -180,23 +185,26 @@
           </reports>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
       </plugin>
-    </plugins>
-    <pluginManagement>
-      <plugins>
+  </plugins>
+  <pluginManagement>
+  <plugins>
+
         <plugin>
           <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
         </plugin>
-      </plugins>
-    </pluginManagement>
+  </plugins>
+  </pluginManagement>
   </build>
   <reporting>
-    <plugins>
+  <plugins>
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId><artifactId>javancss-maven-plugin</artifactId><version>2.1</version>
       </plugin>
-    </plugins>
+  </plugins>
   </reporting>
 </project>
