@@ -78,13 +78,29 @@ This part is experimental and not yet fully implemented. Some parts of EXMARaLDA
 
 To wrap the Partitureditor as windows executable with JSmooth (note the use of `utils.xml`)
 
-    mvn -f utils.xml antrun:run@jsmoothgen_partitureditor
+    mvn -f utils.xml antrun:run@jsmoothgen_partitureditor_fobs
 
 You'll find the executable in
 
     %EXMARALDA_WORKING_DIR%\target\PartiturEditorWithFOBS.exe
 
 For test purposes there is an example file included: `%EXMARALDA_WORKING_DIR%\exmaralda.exb` with its corresponding audio file `%EXMARALDA_WORKING_DIR%\exmaralda.wav`
+
+Following commands build the executables for the other EXMARaLDA applications:
+
+    mvn -f utils.xml antrun:run@jsmoothgen_coma
+    mvn -f utils.xml antrun:run@jsmoothgen_exakt_fobs
+    mvn -f utils.xml antrun:run@jsmoothgen_folker_fobs
+    mvn -f utils.xml antrun:run@jsmoothgen_orthonormal_fobs
+    mvn -f utils.xml antrun:run@jsmoothgen_teidrop
+
+You'll find the executables in
+
+    %EXMARALDA_WORKING_DIR%\target\coma.exe
+    %EXMARALDA_WORKING_DIR%\target\ExaktWithFOBS.exe
+    %EXMARALDA_WORKING_DIR%\target\FolkerWithFOBS.exe
+    %EXMARALDA_WORKING_DIR%\target\OrthoNormalWithFOBS.exe
+    %EXMARALDA_WORKING_DIR%\target\teidrop.exe
 
 ## Change Player
 

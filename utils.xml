@@ -6,17 +6,28 @@
     <exmaraldaVersion>1.6</exmaraldaVersion>
     <exmaraldaVersionType>tag</exmaraldaVersionType>
   </properties>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>de.uni-hamburg.hzsk</groupId><artifactId>EXMARaLDA</artifactId><version>1.6</version>
+    <name>EXMARaLDA</name>
+    <description>EXMARaLDA is a system for working with oral corpora on a computer. It consists of a transcription and annotation tool (Partitur-Editor), a tool for managing corpora (Corpus-Manager) and a query and analysis tool (EXAKT). EXMARaLDA was developed in the project "Computer assisted methods for the creation and analysis of multilingual data" at the Collaborative Research Center "Multilingualism (Sonderforschungsbereich "Mehrsprachigkeit" – SFB 538) at the University of Hamburg. Since July 2011, the development of EXMARaLDA is continued at the Hamburg Centre for Language Corpora, since November 2011 in cooperation with the Archive for Spoken German at the Institute for the German Language in Mannheim.</description>
+    <url>http://exmaralda.org</url>
+    <organization><name>Hamburg Centre for Language Corpora</name><url>http://hzsk.uni-hamburg.de</url></organization>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.uni-hamburg.hzsk</groupId>
+    <artifactId>EXMARaLDA</artifactId>
+    <version>1.6</version>
   <repositories>
-    <repository><id>mvnrepository</id><name>Maven Repository</name><url>https://mvnrepository.com</url></repository>
+    <repository><id>http___projects.nigelsim.org_maven</id><name>http___projects.nigelsim.org_maven</name><url>http://projects.nigelsim.org/maven</url></repository>
+    <repository><id>https___maven.java.net_content_repositories_releases</id><name>https___maven.java.net_content_repositories_releases</name><url>https://maven.java.net/content/repositories/releases</url></repository>
+    <repository><id>https___repository.jboss.org</id><name>https___repository.jboss.org</name><url>https://repository.jboss.org</url></repository>
+    <repository><id>http___central.maven.org_maven2</id><name>http___central.maven.org_maven2</name><url>http://central.maven.org/maven2</url></repository>
   </repositories>
   <dependencies>
-    <dependency><groupId>org.apache.ant</groupId><artifactId>ant</artifactId><version>1.10.1</version></dependency>
-    <dependency><groupId>org.apache.ant</groupId><artifactId>ant-launcher</artifactId><version>1.10.1</version></dependency>
+    <!-- dependencies for maven plugins -->
+    <dependency><groupId>org.apache.ant</groupId><artifactId>ant</artifactId><version>1.10.1</version><scope>compile</scope><type>jar</type></dependency>
+    <dependency><groupId>org.apache.ant</groupId><artifactId>ant-launcher</artifactId><version>1.10.1</version><scope>compile</scope><type>jar</type></dependency>
   </dependencies>
   <build>
-    <plugins>
+  <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-scm-plugin</artifactId><version>1.9.5</version>
         <executions>
@@ -42,6 +53,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId><version>1.8</version>
         <executions>
@@ -93,7 +105,59 @@
             </configuration>
           </execution>
           <execution>
-            <id>jsmoothgen_partitureditor</id>
+            <id>jsmoothgen_coma</id>
+            <goals><goal>run</goal></goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="coma.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>jsmoothgen_exakt_fobs</id>
+            <goals><goal>run</goal></goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="exakt_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>jsmoothgen_folker_fobs</id>
+            <goals><goal>run</goal></goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="folker_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>jsmoothgen_orthonormal_fobs</id>
+            <goals><goal>run</goal></goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="orthonormal_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>jsmoothgen_partitureditor_fobs</id>
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
@@ -105,9 +169,23 @@
               </target>
             </configuration>
           </execution>
+          <execution>
+            <id>jsmoothgen_teidrop</id>
+            <goals><goal>run</goal></goals>
+            <configuration>
+              <target>
+                <copy todir="${project.basedir}/target/jre">
+                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
+                </copy>
+                <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
+                <jsmoothgen project="teidrop.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
+              </target>
+            </configuration>
+          </execution>
+
         </executions>
       </plugin>
-      <!-- install EXMARaLDA Jars to Maven local repository -->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-install-plugin</artifactId><version>2.4</version>
         <executions>
@@ -135,6 +213,6 @@
           <!--execution><id>install_file_exmaralda.wlfxb-1.3.2</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${project.basedir}/lib/wlfxb-1.3.2.jar</file><groupId>exmaralda</groupId><artifactId>wlfxb</artifactId><version>1.3.2</version><packaging>jar</packaging></configuration></execution-->
         </executions>
       </plugin>
-    </plugins>
+  </plugins>
   </build>
 </project>
