@@ -30,7 +30,7 @@
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/FolkerWithFOBS.exe</executableName>
-  <iconLocation>./target/dummy.ico</iconLocation>
+  <iconLocation>./dummy.ico</iconLocation>
   <initialMemoryHeap>-1</initialMemoryHeap>
   <mainClassName>org.exmaralda.folker.application.ApplicationFrame</mainClassName>
   <maximumMemoryHeap>536870912</maximumMemoryHeap>
