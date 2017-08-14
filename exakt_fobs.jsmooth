@@ -22,6 +22,7 @@
   <classPath>./target/lib/fobsjmf-jmf-0.4.2.jar</classPath>
   <classPath>./target/lib/MRJToolkitStubs-1.0.jar</classPath>
   <classPath>./target/lib/mysql-connector-java-5.1.6.jar</classPath>
+  <classPath>./target/lib/QTJava-2006.06.jar</classPath>
   <classPath>./target/lib/Saxon-HE-9.6.0-7.jar</classPath>
   <classPath>./target/lib/serializer-2.7.2.jar</classPath>
   <classPath>./target/lib/swingworker-1.2.jar</classPath>
@@ -29,7 +30,6 @@
   <classPath>./target/lib/xalan-2.7.2.jar</classPath>
   <classPath>./target/lib/xercesImpl-2.11.0.jar</classPath>
   <classPath>./target/lib/xml-apis-1.4.01.jar</classPath>
-  <classPath>./target/lib/QTJava-2006.06.jar</classPath>
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/ExaktWithFOBS.exe</executableName>
