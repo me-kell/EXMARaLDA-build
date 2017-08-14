@@ -1,0 +1,33 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+  <id>distribution</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <files>
+    <file><source>target/EXMARaLDA-1.6.jar</source></file>
+    <file><source>target/PartiturEditorWithFOBS.exe</source></file>
+    <file><source>target/coma.exe</source></file>
+    <file><source>target/ExaktWithFOBS.exe</source></file>
+    <file><source>target/FolkerWithFOBS.exe</source></file>
+    <file><source>target/OrthoNormalWithFOBS.exe</source></file>
+    <file><source>target/teidrop.exe</source></file>
+  </files>
+  <fileSets>
+    <fileSet>
+      <directory>${basedir}/target/lib</directory>
+      <outputDirectory>lib</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/src/main/icons</directory>
+      <outputDirectory>icons</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/target/dll</directory>
+      <outputDirectory>dll</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/target/jre</directory>
+      <outputDirectory>jre</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

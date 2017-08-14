@@ -86,8 +86,9 @@ You'll find the executable in
 
 For test purposes there is an example file included: `%EXMARALDA_WORKING_DIR%\exmaralda.exb` with its corresponding audio file `%EXMARALDA_WORKING_DIR%\exmaralda.wav`
 
-Following commands build the executables for the other EXMARaLDA applications:
+Following commands build the executables for all EXMARaLDA applications:
 
+    mvn -f utils.xml antrun:run@jsmoothgen_partitureditor_fobs
     mvn -f utils.xml antrun:run@jsmoothgen_coma
     mvn -f utils.xml antrun:run@jsmoothgen_exakt_fobs
     mvn -f utils.xml antrun:run@jsmoothgen_folker_fobs
@@ -96,11 +97,20 @@ Following commands build the executables for the other EXMARaLDA applications:
 
 You'll find the executables in
 
+    %EXMARALDA_WORKING_DIR%\target\PartiturEditorWithFOBS.exe
     %EXMARALDA_WORKING_DIR%\target\coma.exe
     %EXMARALDA_WORKING_DIR%\target\ExaktWithFOBS.exe
     %EXMARALDA_WORKING_DIR%\target\FolkerWithFOBS.exe
     %EXMARALDA_WORKING_DIR%\target\OrthoNormalWithFOBS.exe
     %EXMARALDA_WORKING_DIR%\target\teidrop.exe
+
+## Assembly application
+
+To aggregate the project output along with its dependencies and other files into a single distributable archive run:
+
+    mvn -f pom.xml assembly:single
+
+The aggregated output is in %EXMARALDA_WORKING_DIR%\target\EXMARaLDA-1.6-distribution
 
 ## Change Player
 
