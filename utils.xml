@@ -109,9 +109,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="coma.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
@@ -122,9 +123,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="exakt_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
@@ -135,9 +137,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="folker_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
@@ -148,9 +151,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="orthonormal_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
@@ -161,9 +165,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="partitureditor_fobs.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
@@ -174,9 +179,10 @@
             <goals><goal>run</goal></goals>
             <configuration>
               <target>
-                <copy todir="${project.basedir}/target/jre">
-                  <fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/>
-                </copy>
+                <copy todir="${project.basedir}/target/dist/jre"><fileset dir="C:/sde/tools/jdk-8u144-windows-i586/jre"/></copy>
+                <copy todir="${project.basedir}/target/dist/dll"><fileset dir="${project.basedir}/target/dll"/></copy>
+                <copy todir="${project.basedir}/target/dist/lib"><fileset dir="${project.basedir}/target/lib"/></copy>
+                <copy todir="${project.basedir}/target/dist" file="${project.basedir}/target/EXMARaLDA-1.6.jar"/>
                 <taskdef name="jsmoothgen" classname="net.charabia.jsmoothgen.ant.JSmoothGen" classpath="C:/sde/tools/jsmooth-0.9.9-7/lib/jsmoothgen-ant.jar"/>
                 <jsmoothgen project="teidrop.jsmooth" skeletonroot="C:/sde/tools/jsmooth-0.9.9-7/skeletons"/>
               </target>
