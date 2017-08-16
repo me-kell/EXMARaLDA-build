@@ -15,6 +15,7 @@
     <artifactId>EXMARaLDA</artifactId>
     <version>1.6</version>
   <repositories>
+    <repository><id>http___www.mmbase.org_maven2</id><name>http___www.mmbase.org_maven2</name><url>http://www.mmbase.org/maven2</url></repository>
     <repository><id>http___projects.nigelsim.org_maven</id><name>http___projects.nigelsim.org_maven</name><url>http://projects.nigelsim.org/maven</url></repository>
     <repository><id>https___maven.java.net_content_repositories_releases</id><name>https___maven.java.net_content_repositories_releases</name><url>https://maven.java.net/content/repositories/releases</url></repository>
     <repository><id>https___repository.jboss.org</id><name>https___repository.jboss.org</name><url>https://repository.jboss.org</url></repository>
@@ -57,18 +58,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId><version>1.8</version>
         <executions>
-          <execution>
-            <id>download_dependencies</id>
-            <goals><goal>run</goal></goals>
-            <configuration>
-              <target>
-                <delete dir="${project.basedir}/lib"/>
-                <mkdir dir="${project.basedir}/lib"/>
-                <!-- get compile dependency for clarin -->
-                <get src="http://www.mmbase.org/maven2/com/bea/xml/jsr173-ri/1.0/jsr173-ri-1.0.jar" dest="${project.basedir}/lib/jsr173-ri-1.0.jar"/>
-              </target>
-            </configuration>
-          </execution>
           <execution>
             <id>prepare_sources</id>
             <goals><goal>run</goal></goals>
@@ -191,10 +180,9 @@
           <execution><id>11</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/jmf.jar</file><groupId>exmaralda</groupId><artifactId>jmf</artifactId><version>2003.04</version><packaging>jar</packaging></configuration></execution>
           <execution><id>12</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/lobo.jar</file><groupId>exmaralda</groupId><artifactId>lobo</artifactId><version>0.98.2</version><packaging>jar</packaging></configuration></execution>
           <execution><id>13</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/lobo-pub.jar</file><groupId>exmaralda</groupId><artifactId>lobo-pub</artifactId><version>0.98.2</version><packaging>jar</packaging></configuration></execution>
-          <execution><id>14</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/QTJava.zip</file><groupId>exmaralda</groupId><artifactId>QTJava</artifactId><version>2006.06</version><packaging>jar</packaging></configuration></execution>
-          <execution><id>15</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/quaqua.jar</file><groupId>exmaralda</groupId><artifactId>quaqua</artifactId><version>9.1</version><packaging>jar</packaging></configuration></execution>
+          <execution><id>14</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/quaqua.jar</file><groupId>exmaralda</groupId><artifactId>quaqua</artifactId><version>9.1</version><packaging>jar</packaging></configuration></execution>
+          <execution><id>15</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${installed.exmaralda.dir}/QTJava.zip</file><groupId>exmaralda</groupId><artifactId>QTJava</artifactId><version>2006.06</version><packaging>jar</packaging></configuration></execution>
           <!-- especial executions -->
-          <execution><id>16</id><phase>validate</phase><goals><goal>install-file</goal></goals><configuration><file>${project.basedir}/lib/jsr173-ri-1.0.jar</file><groupId>com.bea.xml</groupId><artifactId>jsr173-ri</artifactId><version>1.0</version><packaging>jar</packaging></configuration></execution>
         </executions>
       </plugin>
 
