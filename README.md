@@ -50,8 +50,8 @@ Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR
 
 Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project (note the use of `utils.xml`):
 
-    if not exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory cd /d %EXMARALDA_WORKING_DIR%
-    mvn -f utils.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
+    cd /d %EXMARALDA_WORKING_DIR%
+    if not exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory mvn -f utils.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
     mvn -f utils.xml antrun:run@download_dependencies
     mvn -f utils.xml antrun:run@prepare_sources
     mvn -f utils.xml validate
