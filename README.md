@@ -39,14 +39,18 @@ In a DOS-Box enter the following commands to set the environment variables:
 
 Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR%
 
+    if exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory cd /d %EXMARALDA_WORKING_DIR%\.. && if exist %EXMARALDA_WORKING_DIR% rd /s /q %EXMARALDA_WORKING_DIR% && if exist %HOMEPATH%\.m2\repository rd /s /q %HOMEPATH%\.m2\repository
+
     git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
     cd /d %EXMARALDA_WORKING_DIR%
+
+    if exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory xcopy %EXMARALDA_WORKING_DIR%\..\checkoutDirectory %EXMARALDA_WORKING_DIR%\checkoutDirectory /s /e /q /y /i
 
 ## Before build with Maven
 
 Checkout EXMARaLDA (feel free to change the version), download dependencies, prepare sources and validate (i.e. install dependencies of) the project (note the use of `utils.xml`):
 
-    cd /d %EXMARALDA_WORKING_DIR%
+    if not exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory cd /d %EXMARALDA_WORKING_DIR%
     mvn -f utils.xml scm:checkout@checkout_exmaralda -DexmaraldaVersion=1.6 -DexmaraldaVersionType=tag
     mvn -f utils.xml antrun:run@download_dependencies
     mvn -f utils.xml antrun:run@prepare_sources

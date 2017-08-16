@@ -30,6 +30,24 @@
   <classPath>./target/lib/xercesImpl-2.11.0.jar</classPath>
   <classPath>./target/lib/xml-apis-1.4.01.jar</classPath>
   <classPath>./target/lib/QTJava-2006.06.jar</classPath>
+  <classPath>./target/lib/batik-anim-1.8.jar</classPath>
+  <classPath>./target/lib/batik-awt-util-1.8.jar</classPath>
+  <classPath>./target/lib/batik-bridge-1.8.jar</classPath>
+  <classPath>./target/lib/batik-codec-1.8.jar</classPath>
+  <classPath>./target/lib/batik-css-1.8.jar</classPath>
+  <classPath>./target/lib/batik-dom-1.8.jar</classPath>
+  <classPath>./target/lib/batik-ext-1.8.jar</classPath>
+  <classPath>./target/lib/batik-extension-1.8.jar</classPath>
+  <classPath>./target/lib/batik-gui-util-1.8.jar</classPath>
+  <classPath>./target/lib/batik-gvt-1.8.jar</classPath>
+  <classPath>./target/lib/batik-parser-1.8.jar</classPath>
+  <classPath>./target/lib/batik-script-1.8.jar</classPath>
+  <classPath>./target/lib/batik-svg-dom-1.8.jar</classPath>
+  <classPath>./target/lib/batik-svggen-1.8.jar</classPath>
+  <classPath>./target/lib/batik-swing-1.8.jar</classPath>
+  <classPath>./target/lib/batik-transcoder-1.8.jar</classPath>
+  <classPath>./target/lib/batik-util-1.8.jar</classPath>
+  <classPath>./target/lib/batik-xml-1.8.jar</classPath>
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/ExaktWithFOBS.exe</executableName>
