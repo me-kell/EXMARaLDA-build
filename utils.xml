@@ -87,9 +87,6 @@
                 <delete dir="${project.basedir}/src/main/java/org/exmaralda/sbcsae" />
                 <delete dir="${project.basedir}/src/main/java/org/exmaralda/exakt/applet" />
                 <delete dir="${project.basedir}/src/main/resources/org/exmaralda/exakt/applet" />
-                <!-- copy the following two files to working.dir. Only for internal test purposes -->
-                <copy file="${project.basedir}/SplashScreen.png" overwrite="true" force="true" tofile="${project.basedir}/src/main/resources/org/exmaralda/partitureditor/partiture/Icons/SplashScreen.png"/>
-                <copy file="${project.basedir}/UrlsOfContextClassLoaderOfCurrentThread.java" overwrite="true" force="true" tofile="${project.basedir}/src/main/java/com/obiecta/utils/UrlsOfContextClassLoaderOfCurrentThread.java"/>
               </target>
             </configuration>
           </execution>
