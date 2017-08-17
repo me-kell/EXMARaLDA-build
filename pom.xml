@@ -224,20 +224,18 @@
       </plugin>
   </plugins>
   <pluginManagement>
-  <plugins>
-
-        <plugin>
-          <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
-        </plugin>
-  </plugins>
+    <plugins>
+      <plugin>
+        <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
+      </plugin>
+    </plugins>
   </pluginManagement>
   </build>
   <reporting>
-  <plugins>
-
+    <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId><artifactId>javancss-maven-plugin</artifactId><version>2.1</version>
       </plugin>
-  </plugins>
+    </plugins>
   </reporting>
 </project>

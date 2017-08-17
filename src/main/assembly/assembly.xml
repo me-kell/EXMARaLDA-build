@@ -4,7 +4,7 @@
     <format>dir</format>
   </formats>
   <files>
-    <file><source>target/EXMARaLDA-1.6.jar</source></file>
+    <!--file><source>target/EXMARaLDA-1.6.jar</source></file-->
     <file><source>target/PartiturEditorWithFOBS.exe</source></file>
     <file><source>target/coma.exe</source></file>
     <file><source>target/ExaktWithFOBS.exe</source></file>
