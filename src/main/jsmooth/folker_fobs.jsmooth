@@ -5,7 +5,7 @@
   <javaProperties>
     <name>java.library.path</name><value>${EXECUTABLEPATH}/dll</value>
   </javaProperties>
-  <classPath>../../../target/EXMARaLDA-1.6.jar</classPath>
+  <classPath>../../../target/lib/EXMARaLDA-1.6.jar</classPath>
   <classPath>../../../target/lib/AppleJavaExtensions-2004.07.jar</classPath>
   <classPath>../../../target/lib/elan-4.9.1.jar</classPath>
   <classPath>../../../target/lib/fobsjmf-fobs4jmf-0.4.2.jar</classPath>

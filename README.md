@@ -39,8 +39,8 @@ In a DOS-Box enter the following commands to set the environment variables:
 
 Clone this repository and change the current directory to %EXMARALDA_WORKING_DIR%
 
-    if exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory cd /d %EXMARALDA_WORKING_DIR%\.. && if exist %EXMARALDA_WORKING_DIR% rd /s /q %EXMARALDA_WORKING_DIR% && if exist %HOMEPATH%\.m2\repository rd /s /q %HOMEPATH%\.m2\repository
-
+    if exist %EXMARALDA_WORKING_DIR%\..\checkoutDirectory cd /d %EXMARALDA_WORKING_DIR%\.. && if exist %EXMARALDA_WORKING_DIR% rd /s /q %EXMARALDA_WORKING_DIR%
+    :: if exist %HOMEPATH%\.m2\repository rd /s /q %HOMEPATH%\.m2\repository
     git.exe clone --depth 1 --branch master https://github.com/me-kell/EXMARaLDA-build.git %EXMARALDA_WORKING_DIR%
     cd /d %EXMARALDA_WORKING_DIR%
 

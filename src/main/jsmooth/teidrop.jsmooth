@@ -5,7 +5,7 @@
   <javaProperties>
     <name>java.library.path</name><value>${EXECUTABLEPATH}/dll</value>
   </javaProperties>
-  <classPath>../../../target/EXMARaLDA-1.6.jar</classPath>
+  <classPath>../../../target/lib/EXMARaLDA-1.6.jar</classPath>
   <classPath>../../../target/lib/AppleJavaExtensions-2004.07.jar</classPath>
   <classPath>../../../target/lib/bounce-0.11.jar</classPath>
   <classPath>../../../target/lib/jctable-2003.06.jar</classPath>
