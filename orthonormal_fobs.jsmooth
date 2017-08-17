@@ -31,7 +31,7 @@
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/OrthoNormalWithFOBS.exe</executableName>
-  <iconLocation>./dummy.ico</iconLocation>
+  <iconLocation>./orthonormal_fobs.ico</iconLocation>
   <initialMemoryHeap>-1</initialMemoryHeap>
   <mainClassName>org.exmaralda.orthonormal.application.ApplicationFrame</mainClassName>
   <maximumMemoryHeap>536870912</maximumMemoryHeap>

@@ -35,7 +35,7 @@
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/coma.exe</executableName>
-  <iconLocation>./dummy.ico</iconLocation>
+  <iconLocation>./coma.ico</iconLocation>
   <initialMemoryHeap>-1</initialMemoryHeap>
   <mainClassName>org.exmaralda.coma.launcher.Launcher</mainClassName>
   <maximumMemoryHeap>536870912</maximumMemoryHeap>

@@ -26,7 +26,7 @@
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/teidrop.exe</executableName>
-  <iconLocation>./dummy.ico</iconLocation>
+  <iconLocation>./teidrop.ico</iconLocation>
   <initialMemoryHeap>-1</initialMemoryHeap>
   <mainClassName>org.exmaralda.tei.swing.ApplicationFrame</mainClassName>
   <maximumMemoryHeap>536870912</maximumMemoryHeap>

@@ -51,7 +51,7 @@
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/PartiturEditorWithFOBS.exe</executableName>
-  <iconLocation>./dummy.ico</iconLocation>
+  <iconLocation>./partitureditor_fobs.ico</iconLocation>
   <initialMemoryHeap>-1</initialMemoryHeap>
   <mainClassName>org.exmaralda.partitureditor.partiture.PartiturEditor</mainClassName>
   <maximumMemoryHeap>536870912</maximumMemoryHeap>
