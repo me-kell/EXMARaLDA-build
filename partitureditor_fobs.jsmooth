@@ -7,6 +7,13 @@
   </javaProperties>
   <classPath>./target/EXMARaLDA-1.6.jar</classPath>
   <classPath>./target/lib/AppleJavaExtensions-2004.07.jar</classPath>
+  <classPath>./target/lib/elan-4.9.1.jar</classPath>
+  <classPath>./target/lib/fobsjmf-fobs4jmf-0.4.2.jar</classPath>
+  <classPath>./target/lib/ipsk-2012.07.jar</classPath>
+  <classPath>./target/lib/JavaQTMovieView-1.4.5.jar</classPath>
+  <classPath>./target/lib/jctable-2003.06.jar</classPath>
+  <classPath>./target/lib/fobsjmf-jmf-0.4.2.jar</classPath>
+  <classPath>./target/lib/QTJava-2006.06.jar</classPath>
   <classPath>./target/lib/batik-anim-1.8.jar</classPath>
   <classPath>./target/lib/batik-awt-util-1.8.jar</classPath>
   <classPath>./target/lib/batik-bridge-1.8.jar</classPath>
@@ -26,17 +33,11 @@
   <classPath>./target/lib/batik-util-1.8.jar</classPath>
   <classPath>./target/lib/batik-xml-1.8.jar</classPath>
   <classPath>./target/lib/commons-logging-1.2.jar</classPath>
-  <classPath>./target/lib/elan-4.9.1.jar</classPath>
-  <classPath>./target/lib/fobsjmf-fobs4jmf-0.4.2.jar</classPath>
   <classPath>./target/lib/httpclient-4.5.1.jar</classPath>
   <classPath>./target/lib/httpcore-4.4.3.jar</classPath>
   <classPath>./target/lib/httpmime-4.5.1.jar</classPath>
-  <classPath>./target/lib/ipsk-2012.07.jar</classPath>
-  <classPath>./target/lib/JavaQTMovieView-1.4.5.jar</classPath>
   <classPath>./target/lib/jaxen-1.1.6.jar</classPath>
-  <classPath>./target/lib/jctable-2003.06.jar</classPath>
   <classPath>./target/lib/jdom-1.1.3.jar</classPath>
-  <classPath>./target/lib/fobsjmf-jmf-0.4.2.jar</classPath>
   <classPath>./target/lib/MRJToolkitStubs-1.0.jar</classPath>
   <classPath>./target/lib/Saxon-HE-9.6.0-7.jar</classPath>
   <classPath>./target/lib/serializer-2.7.2.jar</classPath>
@@ -47,7 +48,6 @@
   <classPath>./target/lib/xml-apis-1.4.01.jar</classPath>
   <classPath>./target/lib/xml-apis-ext-1.3.04.jar</classPath>
   <classPath>./target/lib/xmlgraphics-commons-2.0.jar</classPath>
-  <classPath>./target/lib/QTJava-2006.06.jar</classPath>
   <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
   <embeddedJar>false</embeddedJar>
   <executableName>./target/PartiturEditorWithFOBS.exe</executableName>
