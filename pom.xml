@@ -222,6 +222,65 @@
       <plugin>
         <groupId>com.github.ferstl</groupId><artifactId>depgraph-maven-plugin</artifactId><version>2.2.1</version>
       </plugin>
+<plugin>
+	<groupId>org.pitest</groupId>
+	<artifactId>classycle-maven-plugin</artifactId>
+	<version>0.4</version>
+	<executions>
+		<execution>
+			<id>verify</id>
+			<phase>verify</phase>
+			<goals>
+				<goal>check</goal>
+			</goals>
+			<configuration>
+				<dependencyDefinition>
+					show allResults
+					check absenceOfPackageCycles > 1 in com.example*
+				</dependencyDefinition>
+
+				<!-- This can be classycle.dependency.DefaultResultRenderer 
+					for text (the default if omitted) or 
+					classycle.dependency.XMLResultRenderer for xml -->
+				<resultRenderer>classycle.dependency.DefaultResultRenderer</resultRenderer>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
+
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <version>3.3</version>
+      <dependencies>
+        <dependency>
+          <groupId>lt.velykis.maven.skins</groupId>
+          <artifactId>reflow-velocity-tools</artifactId>
+          <version>1.1.1</version>
+        </dependency>
+        <!-- Reflow skin requires Velocity >= 1.7  -->
+        <dependency>
+          <groupId>org.apache.velocity</groupId>
+          <artifactId>velocity</artifactId>
+          <version>1.7</version>
+        </dependency>
+      </dependencies>
+    </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <configuration>
+          <show>private</show>
+          <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.8</version>
+      </plugin>
   </plugins>
   <pluginManagement>
     <plugins>
@@ -236,6 +295,44 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId><artifactId>javancss-maven-plugin</artifactId><version>2.1</version>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <configuration>
+          <!--stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile-->
+          <additionalparam>-Xdoclint:none</additionalparam>
+          <show>public</show>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.5</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.8</version>
+        <configuration>
+          <linkXref>true</linkXref>
+        </configuration>
+      </plugin>
+
+        <!--plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin-->
     </plugins>
   </reporting>
 </project>

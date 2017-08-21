@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="EXMARaLDA">
+  <bannerLeft>
+    <name>EXMARaLDA</name>
+    <src>images/exmaralda-logo.png</src>
+    <href>http://exmaralda.org</href>
+  </bannerLeft>
+  <bannerRight>
+    <src></src>
+  </bannerRight>
+  <publishDate position="left"/>
+  <version position="left"/>
+  <!--skin>
+    <groupId>lt.velykis.maven.skins</groupId>
+    <artifactId>reflow-maven-skin</artifactId>
+    <version>1.1.1</version>
+  </skin-->
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.5</version>
+  </skin>
+  <body>
+    <menu ref="reports"/>
+    <menu name="Other Reports">
+      <item name="Classycle" href="classycle/classycle.xml" target="_blank"/>
+      <item name="Tattletale" href="tattletale/index.html" target="_blank"/>
+    </menu>
+  </body>
+</project>
